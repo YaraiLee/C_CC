@@ -1,8 +1,7 @@
 #include <iostream>
 
 using namespace std;
-//»ùÀà
-
+//åŸºç±»
 class D
 {
 public:
