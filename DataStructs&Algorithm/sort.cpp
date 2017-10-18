@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-	//²åÈëÅÅĞò-->ÎÈ¶¨ 
+//æ’å…¥æ’åº-->ç¨³å®š
 void insert_sort(int arr[], int size)
 {
 	int i, j, v;
@@ -14,7 +14,7 @@ void insert_sort(int arr[], int size)
 	}
 } 
 
-	//Ñ¡ÔñÅÅĞò-->²»ÎÈ¶¨ 
+//é€‰æ‹©æ’åº-->ä¸ç¨³å®š 
 void select_sort(int arr[], int size)
 {
 	for (int i = 0; i < size-1; i++)
@@ -31,7 +31,7 @@ void select_sort(int arr[], int size)
 		}
 	}
 } 
-	//Ã°ÅİÅÅĞò-->ÎÈ¶¨ 
+	//å†’æ³¡æ’åº-->ç¨³å®š 
 void bubble_sort(int arr[], int len)
 {
 	for (int i = 0; i < len-1; i++)
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 {
 	int array[] = {9,2,4,6,2,1,4,9,0};
 #if 1	
-	printf("ÅÅĞòÇ°:\n"); 
+	printf("æ’åºå‰:\n"); 
 	for (int i = 0; i < sizeof(array)/sizeof(array[0]); i++)
 	{	
 		printf("[%d]=%d ", i, array[i]);	
@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 //	select_sort(array, sizeof(array)/sizeof(array[0]));
 
 //	bubble_sort(array, sizeof(array)/sizeof(array[0])); 
-	printf("ÅÅĞòºó:\n"); 
+	printf("æ’åºå:\n"); 
 	for (int i = 0; i < sizeof(array)/sizeof(array[0]); i++)
 	{
 		printf("[%d]=%d ", i, array[i]);
