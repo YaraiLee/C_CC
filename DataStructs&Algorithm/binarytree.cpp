@@ -114,8 +114,8 @@ int calculate_height_of_tree(const TREE_NODE* pTreeNode)
 	if (NULL == *ppTreeNode)
 	{
 		*ppTreeNode = (TREE_NODE*)malloc(sizeof(TREE_NODE));
-		asssert(NULL != *ppTreeNode);
-		return true; 
+        assert(NULL != *ppTreeNode);
+		return true;
 	}
 	return _insert_node_into_tree(ppTreeNode, data, NULL);
  }
