@@ -115,3 +115,72 @@ LinkList* Search_LinkList(LinkList* head, elemtype key)
 	}
 	return p;
 }
+/**
+函数描述：在单链表指定节点p后插入数据 x 
+*/
+void InsertAfter_LinkList(LinkList* p, elemtype x)
+{
+	LinkList* s;
+	s = (LinkList*)malloc(sizeof(LinkList));
+	s->data = x;
+	//后两行顺序不能颠倒 
+	s->next= p->next; //新节点连入链表 
+	p->next = s;//修改前驱结点指针域 
+}
+/**
+函数描述:在指定结点p前插入数据x 
+*/
+void InsertBefore_LinkList(LinkList* head, LinkList* p, elemtype x)
+{
+	LinkList* s, *q;
+	s = (LinkList*)malloc(sizeof(LinkList));
+	s->data = x;
+	q = head;
+	while (q->next!= p)//从头结点开始查找p结点前驱结点，可以使用后插，然后交换数据域，省去遍历操作 
+		q = q->next;
+	s->next = p;//修改指针域 
+	q->next = s;
+} 
+/**
+函数描述： 在指定序号i前插入 
+*/
+int InserNo_LinkList(LinkList* head, elemtype x, int i)
+{
+	LinkList* p;
+	if (i == 0) p = NULL;
+	else if(i == 1) p = head;
+	else
+		p = GetData_LinkList(head, i-1);//获取第i-1个结点
+	if (NULL == p)
+	{
+		printf("pos error!\n");
+		return -1;
+	} 
+	else
+	{
+		InsertAfter_LinkList(p, x);//调用后插 
+		return 0;
+	}
+}
+/**
+函数描述：删除指定结点的后继节点 
+*/ 
+int DeleteAfter_LinkList(LinkList* p)
+{
+	LinkList* r;
+	if (NULL == p) 
+	{
+		printf("node is empty!\n")
+		return -1;
+	}
+	r = q->next;
+	if (NULL == r)
+	{
+		printf("no after node!\n");
+		return -1;
+	}
+	p->next= r->next;
+	free(r);//释放内存空间 
+	r = NULL;
+	return 0; 
+} 
