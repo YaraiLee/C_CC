@@ -1,4 +1,9 @@
-
+/*
+**带头结点的单链表相关操作函数 
+** 
+**注：所有计数、索引操作从首节点开始，不是头结点 
+*/
+ 
 typedef int elemtype;
 
 typedef struct node
@@ -65,7 +70,7 @@ void Print_LinkList(LinkList * head)
 	}
 }
 /**
-函数描述：单链表长度 
+函数描述：单链表长度（头结点不包含在内） 
 */
 int LinkList_Length(LinkList* head)
 {
@@ -163,7 +168,7 @@ int InserNo_LinkList(LinkList* head, elemtype x, int i)
 	}
 }
 /**
-函数描述：删除指定结点的后继节点 
+函数描述：删除指定结点p的后继节点 
 */ 
 int DeleteAfter_LinkList(LinkList* p)
 {
@@ -173,7 +178,7 @@ int DeleteAfter_LinkList(LinkList* p)
 		printf("node is empty!\n")
 		return -1;
 	}
-	r = q->next;
+	r = p->next;
 	if (NULL == r)
 	{
 		printf("no after node!\n");
@@ -183,4 +188,57 @@ int DeleteAfter_LinkList(LinkList* p)
 	free(r);//释放内存空间 
 	r = NULL;
 	return 0; 
+} 
+/**
+函数描述：删除指定结点p 
+*/ 
+int DeleteNode_LinkList(LinkList* p)
+{
+	LinkList* r;
+	if (NULL != p->next)//结点p有后继节点 
+	{
+		p->data = p->next->data;//覆盖p的数据域 
+		return (DeleteAfter_LinkList(p));//删除p的后继节点 
+	}
+	else
+	{
+		r = head;
+		while(r->next != p)
+		{
+			r = r->next;
+		}
+		return (DeleteAfter_LinkList(r));//删除r的后继节点，即p 
+	}
+}
+/**
+函数描述：删除指定索引位置的结点 
+*/ 
+int DeleteNo_LinkList(LinkList* head, int i)
+{
+	LinkList *p, *r;
+	if (i == 0) p = NULL;
+	else if (i == 1) p = head;
+	else p = GetData_LinkList(head, i-1);//获取前驱结点 
+	if (NULL == p)
+	{
+		printf("the node not exist!\n");
+		return -1
+	}
+	else
+	{
+		r = p->next;
+		p->next = r->next;
+		free(r);
+		r = NULL;
+		return 0;
+	}
+}
+/**
+函数描述：置空表
+*/
+LinkList *SetNull_LinkList(LinkList *head)
+{
+	while(NULL != head->next)
+		DeleteAfter_LinkList(head);
+	return head;
 } 
