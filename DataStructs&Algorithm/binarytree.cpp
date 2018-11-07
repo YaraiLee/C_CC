@@ -58,7 +58,7 @@ int count_node_number_in_tree(const TREE_NODE* pTreeNode)
 } 
 
 /**
-ÃèÊö£º´ÓĞ¡µ½´ó±éÀú
+æè¿°ï¼šä»å°åˆ°å¤§éå†
 */
 void print_all_node_data(const TREE_NODE* pTreeNode)
 {
@@ -71,21 +71,21 @@ void print_all_node_data(const TREE_NODE* pTreeNode)
 } 
 
 /**
-ÃèÊö£º¶ş²æÊ÷¸ß¶È
+æè¿°ï¼šäºŒå‰æ ‘é«˜åº¦
 */
 int calculate_height_of_tree(const TREE_NODE* pTreeNode)
 {
 	int left, right;
 	if (NULL == pTreeNode)
 		return 0;
-	/*»ñÈ¡¸÷½Úµã×óÓÒ×ÓÊ÷Éî¶ÈµÄ×î´óÖµ*/
+	/*è·å–å„èŠ‚ç‚¹å·¦å³å­æ ‘æ·±åº¦çš„æœ€å¤§å€¼*/
 	left = calculate_height_of_tree(pTreeNode->left_child);
 	right = calculate_height_of_tree(pTreeNode->right_child);
 	return (left > right) ? (left+1):(right+1);
 }
  
  /**
- ÃèÊö£º²åÈë²Ù×÷ 
+ æè¿°ï¼šæ’å…¥æ“ä½œ 
  */
  bool _insert_node_into_tree(TREE_NODE** ppTreeNode, int data, TREE_NODE* pParent)
  {
