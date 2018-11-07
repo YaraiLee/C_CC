@@ -1,5 +1,5 @@
 /**
-Ê¹ÓÃÕ»Ìæ´úµİ¹é£¬ÊµÏÖ¶ş²æÊ÷±éÀú
+ä½¿ç”¨æ ˆæ›¿ä»£é€’å½’ï¼Œå®ç°äºŒå‰æ ‘éå†
 */
 
 #include <stdio.h>
@@ -13,13 +13,13 @@ typedef struct BinNode{
     struct BinNode* rchild;  
 }BinNode;  
   
-typedef BinNode* bintree;          //bintree±¾ÉíÊÇ¸öÖ¸Ïò½áµãµÄÖ¸Õë  
+typedef BinNode* bintree;          //bintreeæœ¬èº«æ˜¯ä¸ªæŒ‡å‘ç»“ç‚¹çš„æŒ‡é’ˆ  
 
 #define SIZE 100  
 typedef struct seqstack{  
     bintree data[SIZE];  
-    int tag[SIZE];   //ÎªºóĞø±éÀú×¼±¸µÄ  
-    int top;     //topÎªÊı×éµÄÏÂ±ê  
+    int tag[SIZE];   //ä¸ºåç»­éå†å‡†å¤‡çš„  
+    int top;     //topä¸ºæ•°ç»„çš„ä¸‹æ ‡  
 }seqstack;  
 
 void push(seqstack *s,bintree t){  
@@ -44,7 +44,7 @@ bintree pop(seqstack *s){
 void createtree(bintree *t)
 {
 	datatype c;
-	if((c=getchar()) == '#')  /*ËùÓĞ½ÚµãÍ¨¹ı'#'½áÊø×óÓÒº¢×ÓÖ¸Õë*/
+	if((c=getchar()) == '#')  /*æ‰€æœ‰èŠ‚ç‚¹é€šè¿‡'#'ç»“æŸå·¦å³å­©å­æŒ‡é’ˆ*/
 	{
    		*t = NULL; 
 	} 
@@ -64,22 +64,22 @@ void postorder_dev(bintree t){
     if(!t){  
         printf("the tree is empty!\n");  
     }else{  
-        while(t || s.top != -1){    //Õ»¿ÕÁËµÄÍ¬Ê±tÒ²Îª¿Õ¡£  
+        while(t || s.top != -1){    //æ ˆç©ºäº†çš„åŒæ—¶tä¹Ÿä¸ºç©ºã€‚  
             while(t){  
                 push(&s,t);  
-                s.tag[s.top] = 0;   //ÉèÖÃ·ÃÎÊ±ê¼Ç£¬0ÎªµÚÒ»´Î·ÃÎÊ£¬1ÎªµÚ¶ş´Î·ÃÎÊ  
+                s.tag[s.top] = 0;   //è®¾ç½®è®¿é—®æ ‡è®°ï¼Œ0ä¸ºç¬¬ä¸€æ¬¡è®¿é—®ï¼Œ1ä¸ºç¬¬äºŒæ¬¡è®¿é—®  
                 t= t->lchild;  
             }  
-            if(s.tag[s.top] == 0){  //µÚÒ»´Î·ÃÎÊÊ±£¬×ªÏòÍ¬²ãÓÒ½áµã  
-                t= s.data[s.top];   //×ó×ßµ½µ×Ê±tÊÇÎª¿ÕµÄ£¬±ØĞëÓĞÕâ²½£¡  
+            if(s.tag[s.top] == 0){  //ç¬¬ä¸€æ¬¡è®¿é—®æ—¶ï¼Œè½¬å‘åŒå±‚å³ç»“ç‚¹  
+                t= s.data[s.top];   //å·¦èµ°åˆ°åº•æ—¶tæ˜¯ä¸ºç©ºçš„ï¼Œå¿…é¡»æœ‰è¿™æ­¥ï¼  
                 s.tag[s.top]=1;       
                 t=t->rchild;  
             }else {  
-                while (s.tag[s.top] == 1){ //ÕÒµ½Õ»ÖĞÏÂÒ»¸öµÚÒ»´Î·ÃÎÊµÄ½áµã£¬ÍË³öÑ­»·Ê±²¢Ã»ÓĞpopËùÒÔÎªÆä×ó×Ó½áµã  
+                while (s.tag[s.top] == 1){ //æ‰¾åˆ°æ ˆä¸­ä¸‹ä¸€ä¸ªç¬¬ä¸€æ¬¡è®¿é—®çš„ç»“ç‚¹ï¼Œé€€å‡ºå¾ªç¯æ—¶å¹¶æ²¡æœ‰popæ‰€ä»¥ä¸ºå…¶å·¦å­ç»“ç‚¹  
                     t = pop(&s);  
                     printf("%c ",t->data);  
                 }  
-                t = NULL; //±ØĞë½«tÖÃ¿Õ¡£Ìø¹ıÏò×ó×ß£¬Ö±½ÓÏòÓÒ×ß  
+                t = NULL; //å¿…é¡»å°†tç½®ç©ºã€‚è·³è¿‡å‘å·¦èµ°ï¼Œç›´æ¥å‘å³èµ°  
             }  
         }  
     }  
@@ -88,8 +88,8 @@ void postorder_dev(bintree t){
 int main(int argc, char *argv[])
 {
 	bintree tree;
-	createtree(&tree);/*Ç°ĞòÊäÈë£ºabd#e##fg###c## */ 
-	postorder_dev(tree);/*ºóĞòÊä³ö£ºedgfbca*/
+	createtree(&tree);/*å‰åºè¾“å…¥ï¼šabd#e##fg###c## */ 
+	postorder_dev(tree);/*ååºè¾“å‡ºï¼šedgfbca*/
 	
 	return 0;
 } 

@@ -26,7 +26,7 @@ HASH_TABLE* create_hash_table()
 
 NODE* find_data_in_hash(HASH_TABLE* pHashTb1, int data)
 {
-	NODE* pNode£»
+	NODE* pNode;
 	if (NULL == pHashTb1)
 	{
 		return NULL;
