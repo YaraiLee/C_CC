@@ -31,6 +31,21 @@ public:
         return box;
     }
 
+    Box operator++(int n) {
+        Box box = *this;
+        this->height += 1;
+        this->width += 1;
+        this->length += 1;
+        return box;
+    }
+
+    Box operator++() {
+        this->length += 1;
+        this->width += 1;
+        this->height += 1;
+        return *this;
+    }
+
 private:
     int length;
     int width;
@@ -43,6 +58,10 @@ int main() {
     box1.setHeight(1);
     box1.setLength(2);
     box1.setWidth(3);
+    cout << box1.getVolume() << endl;
+    box1++;
+    cout << box1.getVolume() << endl;
+    ++box1;
     cout << box1.getVolume() << endl;
     return 0;
 }
