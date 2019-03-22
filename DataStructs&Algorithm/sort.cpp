@@ -49,16 +49,16 @@ void merge_sort(int arr[], int len) {
     merge_sort(arr, n);
 }
 
-//快速排序
+//快速排序 不稳定
 int partSort(int arr[], int left, int right) {
     int value = arr[left];
     while (left < right) {
         while (left < right && value <= arr[right]) {
-            right--;
+            --right;
         }
         if (left < right) arr[left++] = arr[right];
         while (left < right && value > arr[left]) {
-            left++;
+            ++left;
         }
 
         if (left < right) arr[right--] = arr[left];
@@ -67,9 +67,30 @@ int partSort(int arr[], int left, int right) {
     return left;
 }
 
+void swap(int &x, int &y) {
+    int tmp = x;
+    x = y;
+    y = tmp;
+}
+
+int PartSort(int *array, int left, int right) {
+    int &key = array[right];
+    while (left < right) {
+        while (left < right && array[left] <= key) {
+            ++left;
+        }
+        while (left < right && array[right] >= key) {
+            --right;
+        }
+        swap(array[left], array[right]);
+    }
+    swap(array[left], key);
+    return left;
+}
+
 void quick_sort(int arr[], int left, int right) {
     if (left < right) {
-        int pos = partSort(arr, left, right);
+        int pos = PartSort(arr, left, right);
         quick_sort(arr, left, pos - 1);
         quick_sort(arr, pos + 1, right);
     }
