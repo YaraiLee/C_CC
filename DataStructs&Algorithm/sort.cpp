@@ -96,8 +96,38 @@ void quick_sort(int arr[], int left, int right) {
     }
 }
 
+//不适用递归实现快速排序
+#include <stack>
+void quick_sort_stack(int arr[], int left, int right) {
+    if (left < right) {
+        std::stack<int> stack;
+        stack.push(left);
+        stack.push(right);
+
+        while (!stack.empty()) {
+            int r = stack.top();
+            stack.pop();
+            int l = stack.top();
+            stack.pop();
+
+            int index = PartSort(arr, l, r);
+
+            if (index - 1 > l) {
+                stack.push(l);
+                stack.push(index - 1);
+            }
+
+            if (index + 1 < r) {
+                stack.push(index + 1);
+                stack.push(r);
+            }
+        }
+
+    }
+}
+
 int main(int argc, char *argv[]) {
-    int array[] = {9, 2, 4, 6, 2, 1, 4, 9, 0};
+    int array[] = {4, 1, 7, 6, 9, 2, 8, 0, 3, 5};
 #if 1
     printf("排序前:\n");
     for (int i = 0; i < sizeof(array) / sizeof(array[0]); i++) {
@@ -110,7 +140,7 @@ int main(int argc, char *argv[]) {
 //	select_sort(array, sizeof(array)/sizeof(array[0]));
 
 //	bubble_sort(array, sizeof(array)/sizeof(array[0]));
-    quick_sort(array, 0, sizeof(array) / sizeof(array[0]) - 1);
+    quick_sort_stack(array, 0, sizeof(array) / sizeof(array[0]) - 1);
     printf("排序后:\n");
     for (int i = 0; i < sizeof(array) / sizeof(array[0]); i++) {
         printf("[%d]=%d ", i, array[i]);
