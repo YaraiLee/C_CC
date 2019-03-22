@@ -121,6 +121,7 @@ void quick_sort_stack(int arr[], int left, int right) {
                 stack.push(index + 1);
                 stack.push(r);
             }
+
         }
 
     }
