@@ -58,7 +58,7 @@ int count_node_number_in_tree(const TREE_NODE* pTreeNode)
 } 
 
 /**
-描述：从小到大遍历
+描述：中序遍历
 */
 void print_all_node_data(const TREE_NODE* pTreeNode)
 {

@@ -242,3 +242,20 @@ LinkList *SetNull_LinkList(LinkList *head)
 		DeleteAfter_LinkList(head);
 	return head;
 } 
+
+/**
+º¯ÊýÃèÊö£ºÁ´±íµ¹ÖÃ
+*/
+LinkList *Reverse_LinkList(LinkList *head)
+{
+	LinkList *p = head->next;
+	LinkList *q = NULL;
+	head->next = NULL;
+	while(NULL != p)
+	{
+		q = p;
+		p = p->next;		
+		q->next = head->next;
+		head->next = q;
+	}
+}

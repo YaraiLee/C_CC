@@ -1,0 +1,30 @@
+#include <stdio.h>
+//26
+int removeDuplicates(int* nums, int numsSize) {
+    int numsReSize = numsSize;
+    int i = 1, j, index, count=0;
+    for(;i<numsSize;)
+    {
+        if (nums[i] == nums[i-1])
+        {
+            int temp = nums[i];
+            for (j = i; j < numsSize-1;j++)
+                nums[i] = nums[j+1];
+            nums[j+1] = temp;
+            count++;
+        }
+        else
+            i++;
+    }
+    return numsSize-count;
+}
+
+int main()
+{
+	int arr[] = {
+		1,2,2,3
+	};
+	printf("%d\n",removeDuplicates(arr, sizeof(arr)/sizeof(arr[0])));
+	return 0;
+} 
+

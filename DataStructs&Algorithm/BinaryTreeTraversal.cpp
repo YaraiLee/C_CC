@@ -85,6 +85,16 @@ void postorder_dev(bintree t){
     }  
 }  
 
+void postorder(bintree root)
+{
+	if (NULL == root)
+		return ;
+	postorder(root->lchild);
+	postorder(root->rchild);
+	printf("%c ", root->data);
+	return;
+}
+
 int main(int argc, char *argv[])
 {
 	bintree tree;
