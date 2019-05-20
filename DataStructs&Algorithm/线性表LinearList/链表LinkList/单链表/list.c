@@ -218,7 +218,7 @@ int DeleteNo_LinkList(LinkList* head, int i)
 	LinkList *p, *r;
 	if (i == 0) p = NULL;
 	else if (i == 1) p = head;
-	else p = GetData_LinkList(head, i-1);//获取前驱结点 
+	else p = GetData_LinkList(head, i-1);//获取前驱结点
 	if (NULL == p)
 	{
 		printf("the node not exist!\n");

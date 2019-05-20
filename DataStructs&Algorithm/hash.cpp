@@ -6,11 +6,11 @@ typedef struct _NODE
 
 typedef struct _HASH_TABLE
 {
-	NODE* value[10];/*Ä£³ı·ÖÀà*/
+	NODE* value[10];/*æ¨¡é™¤åˆ†ç±»*/
 }HASH_TABLE;
 
 /**
-ÃèÊö£º´´½¨hash±í 
+æè¿°ï¼šåˆ›å»ºhashè¡¨ 
 */
 
 HASH_TABLE* create_hash_table()
@@ -21,12 +21,12 @@ HASH_TABLE* create_hash_table()
 } 
 
 /**
-ÃèÊö£º²éÕÒ²Ù×÷ 
+æè¿°ï¼šæŸ¥æ‰¾æ“ä½œ 
 */
 
 NODE* find_data_in_hash(HASH_TABLE* pHashTb1, int data)
 {
-	NODE* pNode£»
+	NODE* pNode;
 	if (NULL == pHashTb1)
 	{
 		return NULL;
@@ -45,7 +45,7 @@ NODE* find_data_in_hash(HASH_TABLE* pHashTb1, int data)
 } 
 
 /**
-ÃèÊö£ºhash±í²åÈë²Ù×÷ 
+æè¿°ï¼šhashè¡¨æ’å…¥æ“ä½œ 
 */
 
 bool insert_data_into_hash(HASH_TABLE* pHashTb1, int data)
@@ -79,7 +79,7 @@ bool insert_data_into_hash(HASH_TABLE* pHashTb1, int data)
 }
 
 /**
-ÃèÊö£ºhashÉ¾³ı²Ù×÷ 
+æè¿°ï¼šhashåˆ é™¤æ“ä½œ 
 */
 
 bool delete_data_from_hash(HASH_TABLE* pHashTb1, int data)
