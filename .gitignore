@@ -84,3 +84,27 @@ exitStatus*
 *.versionsBackup
 tmp
 temp
+#Visual Studio
+*.[oa]
+*.exe
+*.cbp
+*.depend
+bin/
+obj/
+*.layout
+.layout
+.vs/
+*.opendb
+
+Debug/
+ipch/
+*.sln
+*.db
+*.vcxproj
+*.filters
+ReadMe.txt
+stdafx.h
+stdafx.cpp
+targetver.h
+StdAfx.h
+StdAfx.cpp
