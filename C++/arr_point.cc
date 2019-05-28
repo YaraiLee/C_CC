@@ -11,9 +11,13 @@ int main(int argc, char *argv[])
 
     char char_arr[5] = {'a', 'b', 'c', 'd', 'e'};
     char *p = char_arr;
+    printf("%c\n", *(p+1));
     char **q = &p;
     printf("%c\n", **q);
     (*q)++;
     printf("%c\n", **q);
+	//自增整个数组长度，获取最后一个字符数据	
+    printf("%p %p\n", &char_arr, &char_arr+1);
+    printf("%c\n", *(*(&char_arr+1)-1));
     return 0;
 }
