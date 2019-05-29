@@ -8,6 +8,8 @@ public:
 	~Line();
 	void printLine()const;
 	void change();
+	Line & getLine();
+	Line * getLinePointer();
 private:
 	const Coordinate m_coorA;
 	Coordinate m_coorB;

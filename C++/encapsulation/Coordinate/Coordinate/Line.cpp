@@ -23,3 +23,11 @@ void Line::printLine() const{
 void Line::change() {
 
 }
+//返回引用
+Line& Line::getLine() {
+	return *this;
+}
+//返回指针
+Line* Line::getLinePointer() {
+	return this;
+}
