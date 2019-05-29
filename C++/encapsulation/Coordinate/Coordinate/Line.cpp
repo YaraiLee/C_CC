@@ -3,7 +3,7 @@
 
 using namespace std;
 /*
-*	成员对象没有默认构造函数，则必须使用初始化列表初始化对象成员
+*	成员对象没有默认构造函数或者有常成员变量，则必须使用初始化列表初始化对象成员
 *	构造顺序 m_coorA->m_coorB->Line
 *	析构顺序 Line->m_coorB->m_coorA
 */
@@ -15,7 +15,11 @@ Line::~Line() {
 	cout << "~Line()" << endl;
 }
 
-void Line::printLine() {
+void Line::printLine() const{
 	m_coorA.printXY();
 	m_coorB.printXY();
+}
+
+void Line::change() {
+
 }

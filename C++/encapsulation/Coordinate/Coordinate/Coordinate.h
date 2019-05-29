@@ -6,7 +6,7 @@ public:
 	~Coordinate();
 	void setX(int x);
 	void setY(int y);
-	void printXY();
+	void printXY()const;
 private:
 	int m_iX;
 	int m_iY;

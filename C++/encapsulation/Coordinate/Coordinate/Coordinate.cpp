@@ -19,6 +19,6 @@ void Coordinate::setY(int y) {
 	m_iY = y;
 }
 
-void Coordinate::printXY() {
+void Coordinate::printXY() const{
 	cout << "(" << m_iX << "," << m_iY << ")" << endl;
 }

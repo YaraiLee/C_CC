@@ -6,8 +6,9 @@ class Line
 public:
 	Line(int x1, int y1, int x2, int y2);
 	~Line();
-	void printLine();
+	void printLine()const;
+	void change();
 private:
-	Coordinate m_coorA;
+	const Coordinate m_coorA;
 	Coordinate m_coorB;
 };
