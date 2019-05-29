@@ -36,6 +36,10 @@ int main(void) {
 	cout << "line_1 addr" << endl;
 	cout << &line_1 << endl;
 	cout << line_1.getLinePointer() << endl;
+
+	//Éî¿½±´¡¢Ç³¿½±´
+	Line line_2(line_1);
+	line_2.printLine();
 	system("pause");
 	return 0;
 }

@@ -3,9 +3,7 @@
 
 using namespace std;
 
-Coordinate::Coordinate(int x, int y) {
-	m_iX = x;
-	m_iY = y;
+Coordinate::Coordinate(int x, int y):m_iX(x),m_iY(y) {
 	cout << "Coordinate(int x, int y)" << m_iX << "," << m_iY << endl;
 }
 Coordinate::~Coordinate() {
@@ -21,4 +19,9 @@ void Coordinate::setY(int y) {
 
 void Coordinate::printXY() const{
 	cout << "(" << m_iX << "," << m_iY << ")" << endl;
+}
+
+void Coordinate::operator=(const Coordinate& c) {
+	this->m_iX = c.m_iX;
+	this->m_iX = c.m_iY;
 }
