@@ -95,6 +95,12 @@ obj/
 .layout
 .vs/
 *.opendb
+*.plg
+*.htm
+*.suo
+*.vcproj
+*.ncb
+*.opt
 
 Debug/
 ipch/
