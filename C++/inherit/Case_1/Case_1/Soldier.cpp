@@ -20,4 +20,5 @@ bool Soldier::play(string name, int age) {
 
 void Soldier::work() {
 	cout << "Soldier::work()" << endl;
+	cout << m_strName << " " << m_iAge << endl;
 }

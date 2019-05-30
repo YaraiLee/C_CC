@@ -3,11 +3,11 @@
 Person::Person(string name, int age) {
 	m_strName = name;
 	m_iAge = age;
-	cout << "Person(string name)" << endl;
+	cout << "Person(string name, int age)" << endl;
 }
 
 Person::~Person() {
-	cout << "~Person(" << endl;
+	cout << "~Person()" << endl;
 }
 
 void Person::play() {
