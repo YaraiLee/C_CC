@@ -19,7 +19,8 @@ int main(void) {
 
 	Soldier soldier;
 	soldier.play("Tom", 30);
-	soldier.Person::play();*/
+	soldier.Person::play();		//子类通过 子类.父类::public成员变量/函数 格式访问父类
+	*/
 
 	//isA 通过子类初始化或者赋值给父类
 	//Soldier s;
