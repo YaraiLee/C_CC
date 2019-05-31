@@ -11,6 +11,10 @@ class CanShoot
 {
 public:
 	static const int START = 1;
+	enum {
+		MONDAY = 1,
+		TUESDAY,
+	};
 	virtual void aim() = 0;
 	virtual void reload() = 0;
 	virtual ~CanShoot(){}
