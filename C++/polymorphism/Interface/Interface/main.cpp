@@ -10,6 +10,7 @@ int main(void) {
 	shoot(pCanShoot);
 	cout << pCanShoot->START << endl;
 	cout << pCanShoot->TUESDAY << endl;
+
 	delete pCanShoot;
 	pCanShoot = NULL;
 	system("pause");
