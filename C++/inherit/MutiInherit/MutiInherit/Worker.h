@@ -23,6 +23,10 @@ public:
 		cout << m_strName << endl;
 		cout << "work" << endl;
 	}
+
+	void eat() {
+		cout << "Worker eat()" << endl;
+	}
 protected:
 	string m_strName;
 };

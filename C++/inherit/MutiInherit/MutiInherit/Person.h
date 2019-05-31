@@ -16,9 +16,9 @@ public:
 	{
 		cout << "~Person" << endl;
 	}
-	void eat()
+	virtual void eat()
 	{
-		cout << "eat" << endl;
+		cout << "Person eat()" << endl;
 	}
 
 };

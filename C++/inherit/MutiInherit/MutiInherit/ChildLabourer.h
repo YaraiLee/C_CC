@@ -17,4 +17,8 @@ public:
 	{
 		cout << "~ChildLabourer" << endl;
 	}
+
+	void eat() {
+		cout << "ChildLabourer eat()" << endl;
+	}
 };

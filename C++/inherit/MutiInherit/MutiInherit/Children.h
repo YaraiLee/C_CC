@@ -22,6 +22,10 @@ public:
 		cout << m_iAge << endl;
 		cout << "play" << endl;
 	}
+
+	void eat() {
+		cout << "Children eat()" << endl;
+	}
 protected:
 	int m_iAge;
 };
