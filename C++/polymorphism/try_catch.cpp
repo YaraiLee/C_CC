@@ -37,5 +37,7 @@ int main(void)
     {
         cout << strerr << endl;
     }
+
+	cout << "end" << endl;
 	return 0;
 }
