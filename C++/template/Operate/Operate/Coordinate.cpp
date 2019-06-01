@@ -41,3 +41,10 @@ Coordinate& operator++(Coordinate& coor) {
 	coor.m_iY++;
 	return coor;
 }
+
+Coordinate Coordinate::operator++(int) {
+	Coordinate old(*this);
+	m_iX++;
+	this->m_iY++;
+	return old;
+}
