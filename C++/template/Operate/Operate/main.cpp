@@ -9,7 +9,9 @@ int main(void) {
 	cout << coor1.getX() << ", " << coor1.getY() << endl;
 	-(-coor1);
 	cout << coor1.getX() << ", " << coor1.getY() << endl;
-
+	//测试成员函数和友元函数实现一元运算符前置自增运算符(++)重载
+	++coor1;
+	cout << coor1.getX() << ", " << coor1.getY() << endl;
 	system("pause");
 	return 0;
 }

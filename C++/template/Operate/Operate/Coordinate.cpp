@@ -29,3 +29,15 @@ Coordinate& operator-(Coordinate& coor) {
 	coor.m_iY = -coor.m_iY;
 	return coor;
 }
+
+//Coordinate& Coordinate::operator++() {
+//	m_iX++;
+//	m_iY++;
+//	return *this;
+//}
+
+Coordinate& operator++(Coordinate& coor) {
+	coor.m_iX++;
+	coor.m_iY++;
+	return coor;
+}
