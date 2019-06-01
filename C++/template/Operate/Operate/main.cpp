@@ -27,7 +27,13 @@ int main(void) {
 	Coordinate coor3(2, 3);
 	Coordinate coor4 = coor2 + coor3; //成员函数 相当于 coor2.operator+(coor3) 友元函数 operator+(coor2, coor3)
 	cout << coor4.getX() << ", " << coor4.getY() << endl;
+	//测试友元函数实现二元运算符输出(<<)运算符重载
+	cout << "测试友元函数实现二元运算符输出(<<)运算符重载" << endl;
+	cout << coor4 << endl;
 
+	//测试成员函数实现二元运算符索引([])运算符重载
+	cout << coor4[0] << endl;
+	cout << coor4[2] << endl;
 	system("pause");
 	return 0;
 }

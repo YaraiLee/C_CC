@@ -62,3 +62,16 @@ Coordinate operator+(const Coordinate& coor1, const Coordinate& coor2) {
 	temp.m_iY = coor1.m_iY + coor2.m_iY;
 	return temp;
 }
+
+ostream& operator<<(ostream& out, const Coordinate& coor) {
+	out << coor.m_iX << ", " << coor.m_iY;
+	return out;
+}
+
+int& Coordinate::operator[](int index) {
+	if (0 == index) {
+		return this->m_iX;
+	} else {
+		return this->m_iY;
+	}
+}
