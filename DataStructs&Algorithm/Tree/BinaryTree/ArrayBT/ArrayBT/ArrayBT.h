@@ -3,12 +3,12 @@
 #include <iostream>
 using namespace std;
 
-const int NODE_LEFT = 0;
-const int NODE_RIGHT = 1;
-
 class ArrayBT
 {
 public:
+	const static int NODE_LEFT = 0;
+	const static int NODE_RIGHT = 1;
+
 	ArrayBT(int size, int root);
 	virtual ~ArrayBT();
 	bool addNode(int pos, int direct, int value);
