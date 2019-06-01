@@ -1,4 +1,6 @@
 #include "Time.h"
+#include <iostream>
+using namespace std;
 
 Time::Time(int hour, int min, int sec)
 {
@@ -9,4 +11,8 @@ Time::Time(int hour, int min, int sec)
 
 Time::~Time()
 {
+}
+
+void Time::getTime() {
+	cout << "Time::getTime()" << endl;
 }
