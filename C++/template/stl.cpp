@@ -39,7 +39,7 @@ int main(void)
     for (; it != m.end(); it++) {
         cout << it->first << " " << it->second << endl;
     }
-
+	//C++11
     for (auto itor : m) {
     	cout << "[" << itor.first << "," << itor.second << "]" << endl;
 	}
