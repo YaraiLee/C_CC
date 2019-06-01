@@ -8,11 +8,26 @@ int main(void) {
 	Time time(10, 19, 20);
 	gPrintTime(time);
 
+
 	//Watch watch;
 	//watch.printTime(time);
+
+	cout << Watch::getCount() << endl;
+
 	Watch watch(11,12,23);
 	watch.printTime(time);
 	watch.print();
+
+	cout << Watch::getCount() << endl;
+	
+	Watch *pWatch = new Watch(12, 12, 11);
+
+	cout << Watch::getCount() << endl;
+
+	delete pWatch;
+	pWatch = NULL;
+
+	cout << Watch::getCount() << endl;
 	system("pause");
 	return 0;
 }
