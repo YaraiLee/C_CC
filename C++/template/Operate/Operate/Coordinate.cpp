@@ -48,3 +48,17 @@ Coordinate Coordinate::operator++(int) {
 	this->m_iY++;
 	return old;
 }
+
+//Coordinate Coordinate::operator+(const Coordinate& coor) {
+//	Coordinate temp;
+//	temp.m_iX = this->m_iX + coor.m_iX;
+//	temp.m_iY = this->m_iY + coor.m_iY;
+//	return temp;
+//}
+
+Coordinate operator+(const Coordinate& coor1, const Coordinate& coor2) {
+	Coordinate temp;
+	temp.m_iX = coor1.m_iX + coor2.m_iX;
+	temp.m_iY = coor1.m_iY + coor2.m_iY;
+	return temp;
+}
