@@ -1,7 +1,7 @@
 #include "SequenList.h"
 
 int main(void) {
-	SequenList* ptrList = new SequenList(3);
+	SequenList<int>* ptrList = new SequenList<int>(4);
 	DataType e1 = 3;
 	ptrList->insertListElem(0, e1);
 	DataType e2 = 5;
@@ -21,7 +21,7 @@ int main(void) {
 	cout << boolalpha << ptrList->getNextListElem(e2, nextData) << endl;
 
 	cout << "curData: " << e2 << " nextData: " << nextData << endl;
-	/*DataType delData;
+	DataType delData;
 	ptrList->delListElem(0, delData);
 	cout << "Del delData=" << delData << endl;
 	ptrList->traverseList();
@@ -42,14 +42,18 @@ int main(void) {
 
 	cout << boolalpha << ptrList->delListElem(2, e4) << endl;
 	ptrList->traverseList();
-	
-	cout << boolalpha << ptrList->delListElem(0, e4) << endl;
-	ptrList->traverseList();*/
 
-	//cout << "clear" << endl;
-	//ptrList->clearList();
-	//cout << boolalpha << ptrList->isListEmpty() << endl;
-	//ptrList->traverseList();
+	cout << boolalpha << ptrList->delListElem(0, e4) << endl;
+	ptrList->traverseList();
+
+	cout << "clear" << endl;
+	ptrList->clearList();
+	cout << boolalpha << ptrList->isListEmpty() << endl;
+	ptrList->traverseList();
+
+	cout << boolalpha << ptrList->delListElem(0, e4) << endl;
+	ptrList->traverseList();
+
 
 	delete[]ptrList;
 	ptrList = NULL;
