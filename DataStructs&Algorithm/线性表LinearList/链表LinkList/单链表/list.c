@@ -4,6 +4,9 @@
 **注：所有计数、索引操作从首节点开始，不是头结点 
 */
  
+#include <stdio.h>
+#include <malloc.h>
+
 typedef int elemtype;
 
 typedef struct node
@@ -19,13 +22,13 @@ LinkList * Create_LinkListF()
 {
 	elemtype ix;
 	LinkList* head, *p;
-	head = (LinkList*)malloc(sizoef(LinkList));//生成头结点 
+	head = (LinkList*)malloc(sizeof(LinkList));//生成头结点 
 	head->next = NULL;
 	printf("input data end with 0:\n");
 	scanf("%d", &ix);
 	while(0 != ix)
 	{
-		p = (LinkList*)malloc(sizoef(LinkList));
+		p = (LinkList*)malloc(sizeof(LinkList));
 		p->data = ix;
 		p->next = head->next;//修改新结点的指针域 
 		head->next = p;//修改头结点的指针域 
@@ -63,7 +66,7 @@ LinkList * Create_LinkListR()
 void Print_LinkList(LinkList * head)
 {
 	LinkList* p = head->next;
-	while(NUU != p)
+	while(NULL != p)
 	{
 		printf("\t%d", p->data);
 		p = p->next;
@@ -97,7 +100,7 @@ LinkList* GetData_LinkList(LinkList* head, int index)
 		p = p->next;
 		j++;
 	}
-	if (i == j) return p;
+	if (index == j) return p;
 	else return NULL;
 }
 
@@ -175,7 +178,7 @@ int DeleteAfter_LinkList(LinkList* p)
 	LinkList* r;
 	if (NULL == p) 
 	{
-		printf("node is empty!\n")
+		printf("node is empty!\n");
 		return -1;
 	}
 	r = p->next;
@@ -192,7 +195,7 @@ int DeleteAfter_LinkList(LinkList* p)
 /**
 函数描述：删除指定结点p 
 */ 
-int DeleteNode_LinkList(LinkList* p)
+int DeleteNode_LinkList(LinkList* head, LinkList* p)
 {
 	LinkList* r;
 	if (NULL != p->next)//结点p有后继节点 
@@ -222,7 +225,7 @@ int DeleteNo_LinkList(LinkList* head, int i)
 	if (NULL == p)
 	{
 		printf("the node not exist!\n");
-		return -1
+		return -1;
 	}
 	else
 	{
@@ -246,7 +249,7 @@ LinkList *SetNull_LinkList(LinkList *head)
 /**
 函数描述：链表倒置
 */
-LinkList *Reverse_LinkList(LinkList *head)
+void Reverse_LinkList(LinkList *head)
 {
 	LinkList *p = head->next;
 	LinkList *q = NULL;
