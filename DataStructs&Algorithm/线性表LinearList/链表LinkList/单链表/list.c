@@ -1,25 +1,25 @@
 /*
-**´øÍ·½áµãµÄµ¥Á´±íÏà¹Ø²Ù×÷º¯Êı 
+**å¸¦å¤´ç»“ç‚¹çš„å•é“¾è¡¨ç›¸å…³æ“ä½œå‡½æ•° 
 ** 
-**×¢£ºËùÓĞ¼ÆÊı¡¢Ë÷Òı²Ù×÷´ÓÊ×½Úµã¿ªÊ¼£¬²»ÊÇÍ·½áµã 
+**æ³¨ï¼šæ‰€æœ‰è®¡æ•°ã€ç´¢å¼•æ“ä½œä»é¦–èŠ‚ç‚¹å¼€å§‹ï¼Œä¸æ˜¯å¤´ç»“ç‚¹ 
 */
  
 typedef int elemtype;
 
 typedef struct node
 {
-	elemtype data;//½áµãµÄÊı¾İÓò
-	struct node * next;//½áµãµÄÖ¸ÕëÓò 
+	elemtype data;//ç»“ç‚¹çš„æ•°æ®åŸŸ
+	struct node * next;//ç»“ç‚¹çš„æŒ‡é’ˆåŸŸ 
 }LinkList;
 
 /**
-º¯ÊıÃèÊö£ºÍ·²å·¨£¬½¨Á¢´øÍ·½áµãµÄµ¥Á´±í 
+å‡½æ•°æè¿°ï¼šå¤´æ’æ³•ï¼Œå»ºç«‹å¸¦å¤´ç»“ç‚¹çš„å•é“¾è¡¨ 
 */
 LinkList * Create_LinkListF()
 {
 	elemtype ix;
 	LinkList* head, *p;
-	head = (LinkList*)malloc(sizoef(LinkList));//Éú³ÉÍ·½áµã 
+	head = (LinkList*)malloc(sizoef(LinkList));//ç”Ÿæˆå¤´ç»“ç‚¹ 
 	head->next = NULL;
 	printf("input data end with 0:\n");
 	scanf("%d", &ix);
@@ -27,14 +27,14 @@ LinkList * Create_LinkListF()
 	{
 		p = (LinkList*)malloc(sizoef(LinkList));
 		p->data = ix;
-		p->next = head->next;//ĞŞ¸ÄĞÂ½áµãµÄÖ¸ÕëÓò 
-		head->next = p;//ĞŞ¸ÄÍ·½áµãµÄÖ¸ÕëÓò 
+		p->next = head->next;//ä¿®æ”¹æ–°ç»“ç‚¹çš„æŒ‡é’ˆåŸŸ 
+		head->next = p;//ä¿®æ”¹å¤´ç»“ç‚¹çš„æŒ‡é’ˆåŸŸ 
 		scanf("%d", &ix);
 	}
-	return (head);//·µ»ØÍ·½áµã 
+	return (head);//è¿”å›å¤´ç»“ç‚¹ 
 } 
 /**
-º¯ÊıÃèÊö£ºÎ²²å·¨£¬½¨Á¢´øÍ·½áµãµÄµ¥Á´±í  
+å‡½æ•°æè¿°ï¼šå°¾æ’æ³•ï¼Œå»ºç«‹å¸¦å¤´ç»“ç‚¹çš„å•é“¾è¡¨  
 */ 
 LinkList * Create_LinkListR()
 {
@@ -50,15 +50,15 @@ LinkList * Create_LinkListR()
 		p = (LinkList*)malloc(sizeof(LinkList));
 		p->data= ix;
 		p->next = NULL;
-		tail->next = p;//ĞŞ¸ÄÎ²Ö¸ÕëµÄÖ¸ÕëÓò 
-		tail = p;//ĞŞ¸ÄÎ²Ö¸Õë 
+		tail->next = p;//ä¿®æ”¹å°¾æŒ‡é’ˆçš„æŒ‡é’ˆåŸŸ 
+		tail = p;//ä¿®æ”¹å°¾æŒ‡é’ˆ 
 		scanf("%d", &ix);
 	}
 	return(head);
 }
 
 /**
-º¯ÊıÃèÊö£ºµ¥Á´±í±éÀú 
+å‡½æ•°æè¿°ï¼šå•é“¾è¡¨éå† 
 */ 
 void Print_LinkList(LinkList * head)
 {
@@ -70,7 +70,7 @@ void Print_LinkList(LinkList * head)
 	}
 }
 /**
-º¯ÊıÃèÊö£ºµ¥Á´±í³¤¶È£¨Í·½áµã²»°üº¬ÔÚÄÚ£© 
+å‡½æ•°æè¿°ï¼šå•é“¾è¡¨é•¿åº¦ï¼ˆå¤´ç»“ç‚¹ä¸åŒ…å«åœ¨å†…ï¼‰ 
 */
 int LinkList_Length(LinkList* head)
 {
@@ -84,7 +84,7 @@ int LinkList_Length(LinkList* head)
 	return count;
 }
 /**
-º¯ÊıÃèÊö£º°´ĞòºÅÁ´±í²éÕÒ 
+å‡½æ•°æè¿°ï¼šæŒ‰åºå·é“¾è¡¨æŸ¥æ‰¾ 
 */
 LinkList* GetData_LinkList(LinkList* head, int index)
 {
@@ -92,7 +92,7 @@ LinkList* GetData_LinkList(LinkList* head, int index)
 	int j = 0;
 	if (index <= 0) return NULL;
 	p = head;
-	while(NULL != p->next && j < index)//²»ÊÇÄ¿±êµ«ºó¼Ì»¹ÓĞ½áµã 
+	while(NULL != p->next && j < index)//ä¸æ˜¯ç›®æ ‡ä½†åç»§è¿˜æœ‰ç»“ç‚¹ 
 	{
 		p = p->next;
 		j++;
@@ -102,14 +102,14 @@ LinkList* GetData_LinkList(LinkList* head, int index)
 }
 
 /**
-º¯ÊıÃèÊö£º°´ÖµÁ´±í²éÕÒ 
+å‡½æ•°æè¿°ï¼šæŒ‰å€¼é“¾è¡¨æŸ¥æ‰¾ 
 */
 LinkList* Search_LinkList(LinkList* head, elemtype key)
 {
 	LinkList *p = head->next;
 	while (NULL != p)
 	{
-		if (p->data == key)//ÕÒµ½½áÊø 
+		if (p->data == key)//æ‰¾åˆ°ç»“æŸ 
 		{
 			break;
 		}
@@ -121,19 +121,19 @@ LinkList* Search_LinkList(LinkList* head, elemtype key)
 	return p;
 }
 /**
-º¯ÊıÃèÊö£ºÔÚµ¥Á´±íÖ¸¶¨½Úµãpºó²åÈëÊı¾İ x 
+å‡½æ•°æè¿°ï¼šåœ¨å•é“¾è¡¨æŒ‡å®šèŠ‚ç‚¹påæ’å…¥æ•°æ® x 
 */
 void InsertAfter_LinkList(LinkList* p, elemtype x)
 {
 	LinkList* s;
 	s = (LinkList*)malloc(sizeof(LinkList));
 	s->data = x;
-	//ºóÁ½ĞĞË³Ğò²»ÄÜµßµ¹ 
-	s->next= p->next; //ĞÂ½ÚµãÁ¬ÈëÁ´±í 
-	p->next = s;//ĞŞ¸ÄÇ°Çı½áµãÖ¸ÕëÓò 
+	//åä¸¤è¡Œé¡ºåºä¸èƒ½é¢ å€’ 
+	s->next= p->next; //æ–°èŠ‚ç‚¹è¿å…¥é“¾è¡¨ 
+	p->next = s;//ä¿®æ”¹å‰é©±ç»“ç‚¹æŒ‡é’ˆåŸŸ 
 }
 /**
-º¯ÊıÃèÊö:ÔÚÖ¸¶¨½áµãpÇ°²åÈëÊı¾İx 
+å‡½æ•°æè¿°:åœ¨æŒ‡å®šç»“ç‚¹på‰æ’å…¥æ•°æ®x 
 */
 void InsertBefore_LinkList(LinkList* head, LinkList* p, elemtype x)
 {
@@ -141,13 +141,13 @@ void InsertBefore_LinkList(LinkList* head, LinkList* p, elemtype x)
 	s = (LinkList*)malloc(sizeof(LinkList));
 	s->data = x;
 	q = head;
-	while (q->next!= p)//´ÓÍ·½áµã¿ªÊ¼²éÕÒp½áµãÇ°Çı½áµã£¬¿ÉÒÔÊ¹ÓÃºó²å£¬È»ºó½»»»Êı¾İÓò£¬Ê¡È¥±éÀú²Ù×÷ 
+	while (q->next!= p)//ä»å¤´ç»“ç‚¹å¼€å§‹æŸ¥æ‰¾pç»“ç‚¹å‰é©±ç»“ç‚¹ï¼Œå¯ä»¥ä½¿ç”¨åæ’ï¼Œç„¶åäº¤æ¢æ•°æ®åŸŸï¼Œçœå»éå†æ“ä½œ 
 		q = q->next;
-	s->next = p;//ĞŞ¸ÄÖ¸ÕëÓò 
+	s->next = p;//ä¿®æ”¹æŒ‡é’ˆåŸŸ 
 	q->next = s;
 } 
 /**
-º¯ÊıÃèÊö£º ÔÚÖ¸¶¨ĞòºÅiÇ°²åÈë 
+å‡½æ•°æè¿°ï¼š åœ¨æŒ‡å®šåºå·iå‰æ’å…¥ 
 */
 int InserNo_LinkList(LinkList* head, elemtype x, int i)
 {
@@ -155,7 +155,7 @@ int InserNo_LinkList(LinkList* head, elemtype x, int i)
 	if (i == 0) p = NULL;
 	else if(i == 1) p = head;
 	else
-		p = GetData_LinkList(head, i-1);//»ñÈ¡µÚi-1¸ö½áµã
+		p = GetData_LinkList(head, i-1);//è·å–ç¬¬i-1ä¸ªç»“ç‚¹
 	if (NULL == p)
 	{
 		printf("pos error!\n");
@@ -163,12 +163,12 @@ int InserNo_LinkList(LinkList* head, elemtype x, int i)
 	} 
 	else
 	{
-		InsertAfter_LinkList(p, x);//µ÷ÓÃºó²å 
+		InsertAfter_LinkList(p, x);//è°ƒç”¨åæ’ 
 		return 0;
 	}
 }
 /**
-º¯ÊıÃèÊö£ºÉ¾³ıÖ¸¶¨½áµãpµÄºó¼Ì½Úµã 
+å‡½æ•°æè¿°ï¼šåˆ é™¤æŒ‡å®šç»“ç‚¹pçš„åç»§èŠ‚ç‚¹ 
 */ 
 int DeleteAfter_LinkList(LinkList* p)
 {
@@ -185,20 +185,20 @@ int DeleteAfter_LinkList(LinkList* p)
 		return -1;
 	}
 	p->next= r->next;
-	free(r);//ÊÍ·ÅÄÚ´æ¿Õ¼ä 
+	free(r);//é‡Šæ”¾å†…å­˜ç©ºé—´ 
 	r = NULL;
 	return 0; 
 } 
 /**
-º¯ÊıÃèÊö£ºÉ¾³ıÖ¸¶¨½áµãp 
+å‡½æ•°æè¿°ï¼šåˆ é™¤æŒ‡å®šç»“ç‚¹p 
 */ 
 int DeleteNode_LinkList(LinkList* p)
 {
 	LinkList* r;
-	if (NULL != p->next)//½áµãpÓĞºó¼Ì½Úµã 
+	if (NULL != p->next)//ç»“ç‚¹pæœ‰åç»§èŠ‚ç‚¹ 
 	{
-		p->data = p->next->data;//¸²¸ÇpµÄÊı¾İÓò 
-		return (DeleteAfter_LinkList(p));//É¾³ıpµÄºó¼Ì½Úµã 
+		p->data = p->next->data;//è¦†ç›–pçš„æ•°æ®åŸŸ 
+		return (DeleteAfter_LinkList(p));//åˆ é™¤pçš„åç»§èŠ‚ç‚¹ 
 	}
 	else
 	{
@@ -207,18 +207,18 @@ int DeleteNode_LinkList(LinkList* p)
 		{
 			r = r->next;
 		}
-		return (DeleteAfter_LinkList(r));//É¾³ırµÄºó¼Ì½Úµã£¬¼´p 
+		return (DeleteAfter_LinkList(r));//åˆ é™¤rçš„åç»§èŠ‚ç‚¹ï¼Œå³p 
 	}
 }
 /**
-º¯ÊıÃèÊö£ºÉ¾³ıÖ¸¶¨Ë÷ÒıÎ»ÖÃµÄ½áµã 
+å‡½æ•°æè¿°ï¼šåˆ é™¤æŒ‡å®šç´¢å¼•ä½ç½®çš„ç»“ç‚¹ 
 */ 
 int DeleteNo_LinkList(LinkList* head, int i)
 {
 	LinkList *p, *r;
 	if (i == 0) p = NULL;
 	else if (i == 1) p = head;
-	else p = GetData_LinkList(head, i-1);//»ñÈ¡Ç°Çı½áµã
+	else p = GetData_LinkList(head, i-1);//è·å–å‰é©±ç»“ç‚¹
 	if (NULL == p)
 	{
 		printf("the node not exist!\n");
@@ -234,7 +234,7 @@ int DeleteNo_LinkList(LinkList* head, int i)
 	}
 }
 /**
-º¯ÊıÃèÊö£ºÖÃ¿Õ±í
+å‡½æ•°æè¿°ï¼šç½®ç©ºè¡¨
 */
 LinkList *SetNull_LinkList(LinkList *head)
 {
@@ -244,7 +244,7 @@ LinkList *SetNull_LinkList(LinkList *head)
 } 
 
 /**
-º¯ÊıÃèÊö£ºÁ´±íµ¹ÖÃ
+å‡½æ•°æè¿°ï¼šé“¾è¡¨å€’ç½®
 */
 LinkList *Reverse_LinkList(LinkList *head)
 {
