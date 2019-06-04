@@ -150,9 +150,9 @@ void LinkList::reverseList() const {
 	m_pList->next = NULL;
 	Node*q = NULL;
 	while (NULL != p) {
-		q = p->next;
-		p->next = m_pList->next;
-		m_pList->next = p;
-		p = q;
+		q = p;
+		p = p->next;
+		q->next = m_pList->next;
+		m_pList->next = q;
 	}
 }
