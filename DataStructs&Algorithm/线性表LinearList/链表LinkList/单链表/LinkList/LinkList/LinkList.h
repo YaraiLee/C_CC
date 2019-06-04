@@ -20,6 +20,8 @@ public:
 
 	bool insertNode(int index, const Node& rNode);
 	bool delListNode(int index, Node* ptrNode);
+
+	void reverseList() const;
 private:
 	int m_iLength;
 	Node* m_pList;

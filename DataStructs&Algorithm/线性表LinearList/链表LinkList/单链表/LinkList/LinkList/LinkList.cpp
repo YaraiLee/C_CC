@@ -144,3 +144,15 @@ bool LinkList::delListNode(int index, Node* ptrNode) {
 	m_iLength--;
 	return true;
 }
+
+void LinkList::reverseList() const {
+	Node* p = m_pList->next;
+	m_pList->next = NULL;
+	Node*q = NULL;
+	while (NULL != p) {
+		q = p->next;
+		p->next = m_pList->next;
+		m_pList->next = p;
+		p = q;
+	}
+}

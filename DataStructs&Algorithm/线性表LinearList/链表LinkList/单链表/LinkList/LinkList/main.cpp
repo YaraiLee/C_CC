@@ -18,6 +18,12 @@ int main(void) {
 	list->insertNodeTail(node3);
 	cout << "after insertNodeTail" << endl;
 	list->traverseList();
+
+	//链表倒置
+	list->reverseList();
+	cout << "after reverseList" << endl;
+	list->traverseList();
+
 	//指定位置插入
 	Node node4(4);
 	list->insertNode(4, node4);
