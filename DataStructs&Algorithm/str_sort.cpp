@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void sort(char **pa, int n)//Ã°ÅİÅÅĞò
+void sort(char **pa, int n)//å†’æ³¡æ’åº
 {
     int i, j;
     char *tmp = NULL;
@@ -19,7 +19,7 @@ void sort(char **pa, int n)//Ã°ÅİÅÅĞò
 
 void print_arr(int (*ptr)[3])
 {
-	printf("%d\n", *(ptr+2)[0]);//µÚ¶şĞĞ£¬µÚÒ»ÁĞ 
+	printf("%d\n", *(ptr+2)[0]);//ç¬¬äºŒè¡Œï¼Œç¬¬ä¸€åˆ— 
 }
 
 int main(int argc, char *argv[])
