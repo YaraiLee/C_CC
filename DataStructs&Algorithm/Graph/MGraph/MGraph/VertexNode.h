@@ -2,7 +2,7 @@
 #define VERTEX_NODE_H
 
 //顶点结点类定义
-typedef char VertexType;
+typedef char VertexType;	//顶点数据类型
 
 class VertexNode
 {
