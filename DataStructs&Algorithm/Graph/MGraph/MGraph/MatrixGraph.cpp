@@ -139,3 +139,10 @@ void MatrixGraph::BFSTraverseMatrixImpl(vector<int> preVec) const {
 	}
 	BFSTraverseMatrixImpl(curVec);
 }
+
+void MatrixGraph::DFSTraverseMatrixStack() const {
+
+}
+
+void MatrixGraph::BFSTraverseMatrixQueue() const {
+}
