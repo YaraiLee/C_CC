@@ -46,3 +46,15 @@ void Tree::PostorderTraverse() const {
 	m_pRoot->PostorderTraverse();
 	cout << endl;
 }
+
+void Tree::PreorderTraverseNotRecursion() const {
+
+}
+
+void Tree::InorderTraverseNotRecursion() const {
+
+}
+
+void Tree::PostorderTraverseNotRecursion() const {
+
+}
