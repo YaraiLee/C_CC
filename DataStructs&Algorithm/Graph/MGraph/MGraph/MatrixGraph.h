@@ -16,13 +16,15 @@ public:
 	void resetVertex();	//顶点重置为未访问过
 	bool setValueDiMatrix(int row, int col, const EdgeType value = edgeValid);	//有向图邻接矩阵设置边的权值 默认edgeValid
 	bool setValueUnDiMatrix(int row, int col, const EdgeType value = edgeValid);	//无向图邻接矩阵设置边的权值 默认edgeValid
-	bool getValueFromMatrix(int row, int col, EdgeType& value) const;	//获取指定坐标的值
 	void printMatrix() const;	//打印邻接矩阵
 	void DFSTraverseMatrix(int nodeIndex = 0) const;	//深度优先搜索遍历邻接矩阵(递归版）默认从第一个顶点开始
 	void BFSTraverseMatrix(int nodeIndex = 0) const;	//广度优先搜索遍历邻接矩阵(递归版）默认从第一个顶点开始
-	void BFSTraverseMatrixImpl(vector<EdgeType> preVec) const;	//广度优先搜索实现遍历邻接矩阵(递归版）
 	void DFSTraverseMatrixStack() const;
 	void BFSTraverseMatrixQueue() const;
+private:
+	bool getValueFromMatrix(int row, int col, EdgeType& value) const;	//获取指定坐标的值
+	void BFSTraverseMatrixImpl(vector<EdgeType> preVec) const;	//广度优先搜索实现遍历邻接矩阵(递归版）
+
 private:
 	int m_iCapacity;	//图中最多可容纳的顶点数
 	int m_iVertexCount;	//已经添加的顶点数
