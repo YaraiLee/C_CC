@@ -39,7 +39,7 @@ namespace my {
 		cout << endl;
 	}
 	void findQueue(int row) {
-		if (row >= MAX_ROW) {
+		if (row == MAX_ROW) {
 			my::count++;
 			printArr();
 			return;
