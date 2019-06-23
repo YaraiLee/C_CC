@@ -1,5 +1,6 @@
 #include <iostream>
 #include <assert.h>
+#include <vector>
 
 using namespace std;
 
@@ -71,6 +72,27 @@ void QuickSort(int arr[], int i, int j) {
 		QuickSort(arr, k + 1, j);
 	}
 }
+template <typename T>
+int partitionEx(vector<T>& vec, int i, int j) {
+	T temp = vec[i];
+	while (i < j) {
+		while (vec[j] >= temp && i < j) j--;
+		if (i < j) vec[i++] = vec[j];
+		while (vec[i] <= temp &&i < j) i++;
+		if (i < j) vec[j--] = vec[i];
+	}
+	vec[i] = temp;
+	return i;
+}
+template <typename T>
+void QuickSortEx(vector<T>& vec, int i, int j) {
+	int k;
+	if (i < j) {
+		k = partitionEx<T>(vec, i, j);
+		QuickSortEx<T>(vec, i, k - 1);
+		QuickSortEx<T>(vec, k + 1, j);
+	}
+}
 //—°‘Ò≈≈–Ú ≤ªŒ»∂® O£®n^2£©
 void SelectSort(int a[], int n) {
 	int min;
@@ -106,6 +128,45 @@ void Merge(int a[], int s1, int e1, int s2, int e2, int b[]) {
 	while (k >= i) {
 		a[k] = b[k];
 		k--;
+	}
+}
+template <typename T>
+void MergeEx(vector<T>& veca, int s1, int e1, int s2, int e2) {
+	cout << s1 << " " << s2 << endl;
+	vector<T> vecb;
+	int k = s1;
+	while (s1 <= e1 && s2 <= e2) {
+		if (veca[s1] <= veca[s2]) {
+			vecb.push_back(veca[s1]);
+			s1++;
+		}
+		else {
+			vecb.push_back(veca[s2]);
+			s2++;
+		}
+	}
+	while (s1 <= e1) {
+		vecb.push_back(veca[s1]);
+		s1++;
+	}
+
+	while (s2 <= e2) {
+		vecb.push_back(veca[s2]);
+		s2++;
+	}
+	
+	for (auto v : vecb) {
+		veca[k++] = v;
+	}
+}
+template <typename T>
+void MergeSortEx(vector<T>& vec, int i, int j) {
+	int k;
+	if (i < j) {
+		k = i + (j - i) / 2;
+		MergeSortEx<T>(vec, i, k);
+		MergeSortEx<T>(vec, k + 1, j);
+		MergeEx<T>(vec, i, k, k + 1, j);
 	}
 }
 //πÈ≤¢≈≈–Ú Œ»∂® O(nlogn)
@@ -156,18 +217,20 @@ typedef struct A
 
 
 int main(void) {
-	int arr[] = {2,3,4,5,1,3,0};
-
+	//int arr[] = {2,3,4,5,1,3,0};
+	vector<int> vec{ 2,3,4,5,1,3,0};
+	vector<double> fvec{ 0.1, 3.1, 1.1, 0, -1.1, 2.9 };
 	//InsertionSort(arr, sizeof(arr) / sizeof(arr[0]));
-	BubbleSortEx(arr, sizeof(arr) / sizeof(arr[0]));
+	//BubbleSortEx(arr, sizeof(arr) / sizeof(arr[0]));
 	//QuickSort(arr, 0, sizeof(arr) / sizeof(arr[0]) - 1);
+	MergeSortEx<int>(vec, 0, vec.size()-1);
 	//SelectSort(arr, sizeof(arr) / sizeof(arr[0]));
 
 	//int *ptr = new int[sizeof(arr)/sizeof(arr[0])];
 
 	//MergeSort(arr, 0, sizeof(arr) / sizeof(arr[0]) - 1, ptr);
 
-	for (auto a : arr) {
+	for (auto a : vec) {
 		cout << a << " ";
 	}
 	cout << endl;
