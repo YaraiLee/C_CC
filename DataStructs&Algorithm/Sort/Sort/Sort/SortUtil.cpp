@@ -125,9 +125,9 @@ void Merge(int a[], int s1, int e1, int s2, int e2, int b[]) {
 	while (s1 <= e1) b[k++] = a[s1++];
 	while (s2 <= e2) b[k++] = a[s2++];
 	k--;
-	while (k >= i) {
-		a[k] = b[k];
-		k--;
+	while (i <= k) {
+		a[i] = b[i];
+		i++;
 	}
 }
 template <typename T>
@@ -217,20 +217,20 @@ typedef struct A
 
 
 int main(void) {
-	//int arr[] = {2,3,4,5,1,3,0};
+	int arr[] = {2,3,4,5,1,3,0};
 	vector<int> vec{ 2,3,4,5,1,3,0};
 	vector<double> fvec{ 0.1, 3.1, 1.1, 0, -1.1, 2.9 };
 	//InsertionSort(arr, sizeof(arr) / sizeof(arr[0]));
 	//BubbleSortEx(arr, sizeof(arr) / sizeof(arr[0]));
 	//QuickSort(arr, 0, sizeof(arr) / sizeof(arr[0]) - 1);
-	MergeSortEx<int>(vec, 0, vec.size()-1);
+	//MergeSortEx<int>(vec, 0, vec.size()-1);
 	//SelectSort(arr, sizeof(arr) / sizeof(arr[0]));
 
-	//int *ptr = new int[sizeof(arr)/sizeof(arr[0])];
+	int *ptr = new int[sizeof(arr)/sizeof(arr[0])];
 
-	//MergeSort(arr, 0, sizeof(arr) / sizeof(arr[0]) - 1, ptr);
+	MergeSort(arr, 0, sizeof(arr) / sizeof(arr[0]) - 1, ptr);
 
-	for (auto a : vec) {
+	for (auto a : arr) {
 		cout << a << " ";
 	}
 	cout << endl;
