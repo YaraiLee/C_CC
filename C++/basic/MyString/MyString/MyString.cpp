@@ -17,7 +17,7 @@ MyString::MyString(const char* ptrData)
 	}
 }
 
-MyString::~MyString()
+MyString::~MyString(void)
 {
 	cout << "~MyString()" << endl;
 	delete[]m_data;

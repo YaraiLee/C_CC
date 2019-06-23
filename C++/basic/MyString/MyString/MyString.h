@@ -7,7 +7,7 @@ class MyString
 	friend ostream& operator<<(ostream& out, const MyString& str);
 public:
 	MyString(const char* ptrData = NULL);
-	~MyString();
+	~MyString(void);
 	MyString(const MyString& other);
 	MyString& operator=(const MyString& other);
 private:
