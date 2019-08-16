@@ -1,0 +1,21 @@
+#include <iostream>
+#include <thread>
+#include <string>
+
+void thread_function(std::string s)
+{
+    std::cout << "thread function ";
+    std::cout << "message is = " << s << std::endl;
+    std::cout << "thread id = " << std::this_thread::get_id() << std::endl;
+}
+
+int main()
+{
+    std::string s = "Kathy Perry";
+    std::thread t(&thread_function, std::move(s));
+    t.join();
+
+    std::cout << "main thread id = " << std::this_thread::get_id() << std::endl;
+    std::cout << "main thread message = " << s << std::endl;
+    return 0;
+}
