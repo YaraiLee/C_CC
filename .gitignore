@@ -101,6 +101,7 @@ obj/
 *.vcproj
 *.ncb
 *.opt
+.vscode
 
 Debug/
 ipch/
