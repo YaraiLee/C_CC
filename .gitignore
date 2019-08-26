@@ -115,3 +115,5 @@ stdafx.cpp
 targetver.h
 StdAfx.h
 StdAfx.cpp
+
+cmake-build-debug
