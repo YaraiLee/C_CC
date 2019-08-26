@@ -30,7 +30,7 @@ public:
         box.length = this->length + b.length;
         return box;
     }
-
+    //后++
     Box operator++(int n) {
         Box box = *this;
         this->height += 1;
@@ -38,7 +38,7 @@ public:
         this->length += 1;
         return box;
     }
-
+    //前++
     Box operator++() {
         this->length += 1;
         this->width += 1;

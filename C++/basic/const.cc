@@ -7,9 +7,9 @@ int main(void)
 	const int a = 10;
 	const int *pInt = &a;
 	cout << *pInt << endl;
-//	a = 20;
-	//*pInt = 20;
-	cout << *pInt << endl;
+	// a = 20;
+	// *pInt = 20;
+	// cout << *pInt << endl;
 	int b = 11;
 	pInt = &b;
 	cout << *pInt << endl;
