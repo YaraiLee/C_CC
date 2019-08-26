@@ -7,14 +7,16 @@
 void* pthread_run1(void* arg) { 
     (void)arg; 
     while(1) { 
-        printf("I am thread1,ID: %d\n", pthread_self()); sleep(1); 
+        printf("I am thread1,ID: %d\n", pthread_self()); 
+        sleep(1); 
     }
 } 
 
 void* pthread_run2(void* arg) { 
     (void)arg; 
     while(1) { 
-        printf("I am thread2,ID: %d\n", pthread_self()); sleep(1); 
+        printf("I am thread2,ID: %d\n", pthread_self()); 
+        sleep(1); 
     }
 } 
 int main() { 
