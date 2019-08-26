@@ -32,8 +32,9 @@ int main(void) {
 	return 0;
 }
 
-//访问私有成员
+//路脙脦脢脣陆脫脨鲁脡脭卤
 void gPrintTime(Time &time) {
 	time.getTime();	
 	cout << time.m_iHour << ":" << time.m_iMin << ":" << time.m_iSec << endl;
+	
 }
