@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
 	
 	display<int, string>(3, "yjkh");
 	display<int, 3>(10);
-	display<char*>("asdfasdfa");
+	display<string>("asdfasdfa");
 	system("pause");
 	return 0;
 } 
