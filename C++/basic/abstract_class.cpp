@@ -49,7 +49,7 @@ int main(void)
    Rect.setWidth(5);
    Rect.setHeight(7);
    // 输出对象的面积
-   cout << "Total Rectangle area: " << p->getArea() << endl;//或者Tect.getArea() 
+   cout << "Total Rectangle area: " << p->getArea() << endl;//或者Rect.getArea() 
  
    Tri.setWidth(5);
    Tri.setHeight(7);
