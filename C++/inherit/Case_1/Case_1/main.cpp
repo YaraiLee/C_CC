@@ -1,10 +1,10 @@
 #include "Soldier.h"
 
-//´«ÊµÌåÀà£¬µ÷ÓÃ¿½±´¹¹Ôìº¯ÊýºÍÎö¹¹º¯Êý£¬Ð§ÂÊµÍ
+//ä¼ å®žä½“ç±»ï¼Œè°ƒç”¨æ‹·è´æž„é€ å‡½æ•°å’Œæžæž„å‡½æ•°ï¼Œæ•ˆçŽ‡ä½Ž
 void test1(Person p) {
 	p.play();
 }
-//´«ÀàÒýÓÃ»òÕßÖ¸ÕëÀàÐÍ£¬²»»áµ÷ÓÃ¿½±´¹¹Ôìº¯ÊýºÍÎö¹¹º¯Êý£¬Ð§ÂÊ¸ß
+//ä¼ ç±»å¼•ç”¨æˆ–è€…æŒ‡é’ˆç±»åž‹ï¼Œä¸ä¼šè°ƒç”¨æ‹·è´æž„é€ å‡½æ•°å’Œæžæž„å‡½æ•°ï¼Œæ•ˆçŽ‡é«˜
 void test2(Person& p) {
 	p.play();
 }
@@ -13,36 +13,36 @@ void test3(Person* p) {
 }
 
 int main(void) {
-	//¿É¼Ì³Ð£¬Í¬Ãû£¬³ÉÔ±Òþ²Ø
+	//å¯ç»§æ‰¿ï¼ŒåŒåï¼Œæˆå‘˜éšè—
 	/*Person person;
 	person.play();
 
 	Soldier soldier;
 	soldier.play("Tom", 30);
-	soldier.Person::play();		//×ÓÀàÍ¨¹ý ×ÓÀà.¸¸Àà::public³ÉÔ±±äÁ¿/º¯Êý ¸ñÊ½·ÃÎÊ¸¸Àà
+	soldier.Person::play();		//å­ç±»é€šè¿‡ å­ç±».çˆ¶ç±»::publicæˆå‘˜å˜é‡/å‡½æ•° æ ¼å¼è®¿é—®çˆ¶ç±»
 	*/
 
-	//isA Í¨¹ý×ÓÀà³õÊ¼»¯»òÕß¸³Öµ¸ø¸¸Àà
+	//isA é€šè¿‡å­ç±»åˆå§‹åŒ–æˆ–è€…èµ‹å€¼ç»™çˆ¶ç±»
 	//Soldier s;
 	//Person p = s;
 	//Person& p1 = s;
 	//Person* p2 = &s;
-	//p.play();	//µ÷ÓÃ¸¸Àà³ÉÔ±º¯Êý£¬×ÓÀà¼Ì³ÐµÄ³ÉÔ±±äÁ¿Òþ²Ø¸¸Àà³ÉÔ±±äÁ¿
+	//p.play();	//è°ƒç”¨çˆ¶ç±»æˆå‘˜å‡½æ•°ï¼Œå­ç±»ç»§æ‰¿çš„æˆå‘˜å˜é‡éšè—çˆ¶ç±»æˆå‘˜å˜é‡
 	//
-	//p.work();	//´íÎó£¬¸¸Àà²»ÄÜµ÷ÓÃ×ÓÀà³ÉÔ±º¯Êý
+	//p.work();	//é”™è¯¯ï¼Œçˆ¶ç±»ä¸èƒ½è°ƒç”¨å­ç±»æˆå‘˜å‡½æ•°
 	
-	//¸¸Àà²»ÄÜ³õÊ¼»¯»òÕß¸³Öµ¸ø×ÓÀà
-	//s = p; //´íÎó
-	//Soldier* s1 = &p;//´íÎó
+	//çˆ¶ç±»ä¸èƒ½åˆå§‹åŒ–æˆ–è€…èµ‹å€¼ç»™å­ç±»
+	//s = p; //é”™è¯¯
+	//Soldier* s1 = &p;//é”™è¯¯
 
-	//ÐéÎö¹¹,¸¸ÀàÎö¹¹º¯ÊýÌí¼Óvirtual£¬·ñÔò×ÓÀàÎö¹¹º¯Êý²»»áÖ´ÐÐ£¬ÄÚ´æÐ¹Â©
+	//è™šæžæž„,çˆ¶ç±»æžæž„å‡½æ•°æ·»åŠ virtualï¼Œå¦åˆ™å­ç±»æžæž„å‡½æ•°ä¸ä¼šæ‰§è¡Œï¼Œå†…å­˜æ³„æ¼
 	//Person* p = new Soldier;
 	//p->play();
 
 	//delete p;
 	//p = NULL;
 
-	//º¯ÊýÐÎ²Î¸¸Àà£¬Êµ²Î×ÓÀà,Çø±ðÀà¡¢ÀàÒýÓÃ¡¢ÀàÖ¸Õë´«²Î
+	//å‡½æ•°å½¢å‚çˆ¶ç±»ï¼Œå®žå‚å­ç±»,åŒºåˆ«ç±»ã€ç±»å¼•ç”¨ã€ç±»æŒ‡é’ˆä¼ å‚
 	//Person p;
 	Soldier s;
 	test1(s);

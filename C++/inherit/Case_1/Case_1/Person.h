@@ -7,12 +7,12 @@ using namespace std;
 class Person
 {
 public:
-	//Ä¬ÈÏ¹¹Ôìº¯Êı
+	//é»˜è®¤æ„é€ å‡½æ•°
 	Person(string name = "jim", int age = 10);
 	virtual ~Person();
 	void play();
 protected:
 	string m_strName;
 private:
-	int m_iAge;	//private³ÉÔ±²»ÄÜ±»×ÓÀà¼Ì³Ğ
+	int m_iAge;	//privateæˆå‘˜ä¸èƒ½è¢«å­ç±»ç»§æ‰¿
 };

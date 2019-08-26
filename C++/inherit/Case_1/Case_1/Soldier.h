@@ -4,11 +4,11 @@
 
 class Soldier : public Person {
 public:
-	//Ä¬ÈÏ¹¹Ôìº¯Êı
+	//é»˜è®¤æ„é€ å‡½æ•°
 	Soldier(string name = "Lee", int age = 29);
 	~Soldier();
 	bool play(string name, int age);
 	void work();
 protected:
-	int m_iAge;	//Òş²Ø´Ó¸¸Àà¼Ì³ĞµÄÍ¬Ãû±äÁ¿
+	int m_iAge;	//éšè—ä»çˆ¶ç±»ç»§æ‰¿çš„åŒåå˜é‡
 };

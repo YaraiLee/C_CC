@@ -9,7 +9,7 @@ Soldier::Soldier(string name, int age) {
 Soldier::~Soldier() {
 	cout << "~Soldier()" << endl;
 }
-//×ÓÀà¶¨Òå¸¸ÀàÍ¬Ãûº¯Êı£¨¼´Ê¹²ÎÊı²»Í¬£©£¬Òş²Ø¸¸ÀàÍ¬Ãûº¯Êı
+//å­ç±»å®šä¹‰çˆ¶ç±»åŒåå‡½æ•°ï¼ˆå³ä½¿å‚æ•°ä¸åŒï¼‰ï¼Œéšè—çˆ¶ç±»åŒåå‡½æ•°
 bool Soldier::play(string name, int age) {
 	cout << "Soldier::play()" << endl;
 	m_strName = name;
