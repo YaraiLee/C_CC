@@ -101,7 +101,7 @@ obj/
 *.vcproj
 *.ncb
 *.opt
-.vscode
+.vscode*
 
 Debug/
 ipch/
@@ -109,11 +109,10 @@ ipch/
 *.db
 *.vcxproj
 *.filters
-ReadMe.txt
 stdafx.h
 stdafx.cpp
 targetver.h
 StdAfx.h
 StdAfx.cpp
-
+test*
 cmake-build-debug
