@@ -13,6 +13,8 @@ int main(void)
 	int b = 11;
 	pInt = &b;
 	cout << *pInt << endl;
+	b = 12;	//通过修改b从而修改*pInt
+	cout << *pInt << endl;
 	//a只读，p可读可写,权力放大，错误
 //	int *p = &a;
 
