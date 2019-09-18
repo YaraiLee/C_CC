@@ -1,7 +1,7 @@
 //C++函数特性
 //1.函数默认值
-//2.重载
-//3.inline
+//2.重载 参数个数和参数类型
+//3.inline 编译时替换
 #include <iostream>
 
 using namespace std;
