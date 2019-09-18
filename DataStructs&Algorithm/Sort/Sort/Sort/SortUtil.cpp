@@ -4,7 +4,7 @@
 
 using namespace std;
 
-//²åÈëÅÅĞò ÎÈ¶¨ÅÅĞò O(n^2)
+//æ’å…¥æ’åº ç¨³å®šæ’åº O(n^2)
 void InsertionSort(int *pData, int n) {
 	assert(NULL != pData);
 	int temp;
@@ -17,7 +17,7 @@ void InsertionSort(int *pData, int n) {
 		pData[j+1] = temp;
 	}
 }
-//Ã°ÅİÅÅĞò ÎÈ¶¨ O£¨n^2£©
+//å†’æ³¡æ’åº ç¨³å®š Oï¼ˆn^2ï¼‰
 void BubbleSort(int arr[], int n) {
 	assert(NULL != arr);
 	int temp;
@@ -31,7 +31,7 @@ void BubbleSort(int arr[], int n) {
 		}
 	}
 }
-//¸Ä½øÃ°ÅİÅÅĞò ÎÈ¶¨ O£¨n^2£©
+//æ”¹è¿›å†’æ³¡æ’åº ç¨³å®š Oï¼ˆn^2ï¼‰
 void BubbleSortEx(int arr[], int n) {
 	int temp;
 	bool flag = true;
@@ -50,7 +50,7 @@ void BubbleSortEx(int arr[], int n) {
 		j--;
 	}
 }
-//»®·Öº¯ÊıÊµÏÖ
+//åˆ’åˆ†å‡½æ•°å®ç°
 int partition(int arr[], int i, int j) {
 	int temp = arr[i];
 	while (i < j) {
@@ -62,7 +62,7 @@ int partition(int arr[], int i, int j) {
 	arr[i] = temp;
 	return i;
 }
-//¿ìËÙÅÅĞò ²»ÎÈ¶¨ O(nlogn)
+//å¿«é€Ÿæ’åº ä¸ç¨³å®š O(nlogn)
 void QuickSort(int arr[], int i, int j) {
 	assert(NULL != arr);
 	int k;
@@ -93,7 +93,7 @@ void QuickSortEx(vector<T>& vec, int i, int j) {
 		QuickSortEx<T>(vec, k + 1, j);
 	}
 }
-//Ñ¡ÔñÅÅĞò ²»ÎÈ¶¨ O£¨n^2£©
+//é€‰æ‹©æ’åº ä¸ç¨³å®š Oï¼ˆn^2ï¼‰
 void SelectSort(int a[], int n) {
 	int min;
 	int temp;
@@ -109,7 +109,7 @@ void SelectSort(int a[], int n) {
 		a[min] = temp;
 	}
 }
-//°ÑÁ½¸öÊı×éºÏ²¢
+//æŠŠä¸¤ä¸ªæ•°ç»„åˆå¹¶
 void Merge(int a[], int s1, int e1, int s2, int e2, int b[]) {
 	int k = s1;
 	int i = s1;
@@ -169,7 +169,7 @@ void MergeSortEx(vector<T>& vec, int i, int j) {
 		MergeEx<T>(vec, i, k, k + 1, j);
 	}
 }
-//¹é²¢ÅÅĞò ÎÈ¶¨ O(nlogn)
+//å½’å¹¶æ’åº ç¨³å®š O(nlogn)
 void MergeSort(int a[], int i, int j, int b[]) {
 	assert(NULL != a && NULL != b);
 	int k;
@@ -182,7 +182,7 @@ void MergeSort(int a[], int i, int j, int b[]) {
 }
 
 /************************************************************************/
-/* Æ«ÒÆÁ¿                                                                     */
+/* åç§»é‡                                                                     */
 
 /************************************************************************/
 typedef struct A
