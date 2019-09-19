@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//±©Á¦ÆÆ½â O£¨n^3£© 
+//æš´åŠ›ç ´è§£ Oï¼ˆn^3ï¼‰ 
 int maxSubArr(int a[], int n, int& sum) {
 	int index = -1;
 	for (int i = 0; i < n; i++) {
@@ -19,14 +19,14 @@ int maxSubArr(int a[], int n, int& sum) {
 	}
 	return index;
 }
-//Ì°ÐÄ·¨ O(n) 
+//è´ªå¿ƒæ³• O(n) 
 int maxSubArrEx(int a[], int n, int& sum) {
 	int subSum = INT_MIN;
 	int index = 0;
 	for (int i = 0; i < n; ++i) {
 		subSum += a[i];
 		
-		if (subSum < a[i]) {//iÖ®Ç°µÄ×ÓÊý×éºÍÎª¸ºÊý£¬¶ªÆú£¬´ÓiÖØÐÂÀÛ¼ÆsubSum 
+		if (subSum < a[i]) {//iä¹‹å‰çš„å­æ•°ç»„å’Œä¸ºè´Ÿæ•°ï¼Œä¸¢å¼ƒï¼Œä»Žié‡æ–°ç´¯è®¡subSum 
 			index = i;
 			subSum = a[i];
 		}
