@@ -3,7 +3,7 @@
 
 using namespace std;
 /**
-* 定义人类: Person
+* 瀹氫箟浜虹被: Person
 */
 class Person
 {

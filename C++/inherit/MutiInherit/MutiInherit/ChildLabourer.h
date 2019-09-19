@@ -2,8 +2,8 @@
 #include "Children.h"
 #include "Worker.h"
 /**
-* ¶¨ÒåÍ¯¹¤Àà£ºChildLabourer
-* ¹«ÓĞ¼Ì³Ğ¹¤ÈËÀàºÍ¶ùÍ¯Àà
+* å®šä¹‰ç«¥å·¥ç±»ï¼šChildLabourer
+* å…¬æœ‰ç»§æ‰¿å·¥äººç±»å’Œå„¿ç«¥ç±»
 */
 class ChildLabourer : public Worker, public Children
 {

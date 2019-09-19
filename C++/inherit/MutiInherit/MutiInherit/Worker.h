@@ -3,8 +3,8 @@
 #include <string>
 
 /**
-* ¶¨Òå¹¤ÈËÀà: Worker
-* Ğé¼Ì³ĞÈËÀà
+* å®šä¹‰å·¥äººç±»: Worker
+* è™šç»§æ‰¿äººç±»
 */
 class Worker : virtual public Person
 {

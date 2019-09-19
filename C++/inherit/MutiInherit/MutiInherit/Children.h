@@ -2,8 +2,8 @@
 #include "Person.h"
 
 /**
-* ¶¨Òå¶ùÍ¯Àà:Children
-* Ğé¼Ì³ĞÈËÀà
+* å®šä¹‰å„¿ç«¥ç±»:Children
+* è™šç»§æ‰¿äººç±»
 */
 class Children : virtual public Person
 {
