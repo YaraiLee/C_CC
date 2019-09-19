@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-typedef struct A
+typedef struct
 {
 	double a;
 	char c;
@@ -21,7 +21,7 @@ int main(void)
 	
 	ST_A sta;
 
-	offset = (unsigned long)(&(sta.a)) - (unsigned long)(&(sta.c));
+	offset = (unsigned long)(&sta.a) - (unsigned long)(&sta.c);//&sta=&sta.a
 
 	printf("%p\n", &sta);
 	printf("%p\n", &(sta.c));
