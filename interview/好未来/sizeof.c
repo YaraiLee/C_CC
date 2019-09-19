@@ -17,7 +17,7 @@ int main(void)
 {
 	int64_t offset = OFFSET(ST_A, d);
 
-	printf("%ld\n", offset);
+	printf("%lld\n", offset);
 	
 	ST_A sta;
 
@@ -25,7 +25,7 @@ int main(void)
 
 	printf("%p\n", &sta);
 	printf("%p\n", &(sta.c));
-	printf("%ld\n", offset);
+	printf("%lld\n", offset);
 
 
 	return 0;
