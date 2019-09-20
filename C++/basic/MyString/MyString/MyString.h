@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 using namespace std;
-//±àĞ´ÀàStringµÄ¹¹Ôìº¯Êı¡¢¿½±´¹¹Ôìº¯Êı¡¢Îö¹¹º¯ÊıºÍ¸³Öµº¯Êı
+//ç¼–å†™ç±»Stringçš„æ„é€ å‡½æ•°ã€æ‹·è´æ„é€ å‡½æ•°ã€ææ„å‡½æ•°å’Œèµ‹å€¼å‡½æ•°
 class MyString
 {
 	friend ostream& operator<<(ostream& out, const MyString& str);
