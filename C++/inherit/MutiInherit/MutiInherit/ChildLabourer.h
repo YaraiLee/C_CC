@@ -5,7 +5,7 @@
 * 定义童工类：ChildLabourer
 * 公有继承工人类和儿童类
 */
-class ChildLabourer : public Worker, public Children
+class ChildLabourer : public Children, public Worker
 {
 public:
 	ChildLabourer(string name, int age) :Worker(name), Children(age)

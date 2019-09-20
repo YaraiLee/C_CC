@@ -4,10 +4,10 @@
 #include "ChildLabourer.h"
 
 int main(void) {
-	Person* p = new ChildLabourer("lee", 10);
+	ChildLabourer* p = new ChildLabourer("lee", 10);
 	p->eat();
-	//p->work();
-	//p->play();
+	p->work();
+	p->play();
 
 	delete p;
 	p = NULL;
