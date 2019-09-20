@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Time.h"
-//class Time;	//ÉùÃ÷Àà
+//class Time;	//å£°æ˜ç±»
 
 class Watch
 {
@@ -10,9 +10,9 @@ public:
 	~Watch();
 	void printTime(Time &time);
 	void print();
-	static int getCount();	//¾²Ì¬³ÉÔ±º¯ÊıÖ»ÄÜ·ÃÎÊ¾²Ì¬Êı¾İ³ÉÔ±ºÍµ÷ÓÃ¾²Ì¬³ÉÔ±º¯Êı
+	static int getCount();	//é™æ€æˆå‘˜å‡½æ•°åªèƒ½è®¿é—®é™æ€æ•°æ®æˆå‘˜å’Œè°ƒç”¨é™æ€æˆå‘˜å‡½æ•°
 private:
 	Time m_cTime;
-	static int sm_iCount;	//¹«ÓĞ¾²Ì¬³ÉÔ±º¯Êı¿ÉÒÔ±»ÀàÖ±½Óµ÷ÓÃ,Ë½ÓĞµÄµÃÍ¨¹ı¾²Ì¬³ÉÔ±º¯Êı
+	static int sm_iCount;	//å…¬æœ‰é™æ€æˆå‘˜å‡½æ•°å¯ä»¥è¢«ç±»ç›´æ¥è°ƒç”¨,ç§æœ‰çš„å¾—é€šè¿‡é™æ€æˆå‘˜å‡½æ•°
 };
 
