@@ -1,10 +1,10 @@
 #include <iostream>
 /**
-	ÊµÏÖĞ´Ò»¸öº¯Êı£¬½«×Ö·û´®·­×ª£¬·­×ª·½Ê½ÈçÏÂ£º"I am a student" ·´×ª³É¡°"student a am I"£¬²»½èÖúÈÎºÎ¿âº¯Êı
+	å®ç°å†™ä¸€ä¸ªå‡½æ•°ï¼Œå°†å­—ç¬¦ä¸²ç¿»è½¬ï¼Œç¿»è½¬æ–¹å¼å¦‚ä¸‹ï¼š"I am a student" åè½¬æˆâ€œ"student a am I"ï¼Œä¸å€ŸåŠ©ä»»ä½•åº“å‡½æ•°
 */
 
 
-//ÊµÏÖ´Óstartµ½end×Ö·û½»»» 
+//å®ç°ä»startåˆ°endå­—ç¬¦äº¤æ¢ 
 using namespace std;
 void swap(char* start, char* end) {
 	if (NULL != start && NULL != end) {
@@ -17,7 +17,7 @@ void swap(char* start, char* end) {
 		}
 	}
 }
-/*	·­×ªÕû¸ö×Ö·û´® */ 
+/*	ç¿»è½¬æ•´ä¸ªå­—ç¬¦ä¸² */ 
 void reverseStr(char* str) {
 	if (NULL != str) {
 		char *start = str, *end = str;
@@ -26,7 +26,7 @@ void reverseStr(char* str) {
 		swap(start, end);
 	}
 } 
-/*	·­×ªÕû¸öµ¥´Ê */ 
+/*	ç¿»è½¬æ•´ä¸ªå•è¯ */ 
 void reverseWord(char* str) {
 	if (NULL != str) {
 		char *start = str, *end = str;
