@@ -27,7 +27,6 @@ void insert_sort_1(int arr[], int len)
 }
 
 //选择排序-->不稳定 
-<<<<<<< HEAD
 void select_sort(int arr[], int size)
 {
 	for (int i = 0; i < size-1; i++)

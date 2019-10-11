@@ -4,22 +4,22 @@ using namespace std;
 
 class Coordinate
 {
-	//ÓÑÔªº¯Êı²»ÄÜÓÃconstĞŞÊÎ£¬ÒòÎª²»ÊÇ³ÉÔ±º¯Êı
-	friend Coordinate& operator-(Coordinate& coor);	//ÓÑÔªº¯Êı-ÔËËã·ûÖØÔØ£¬Ã»ÓĞthisÖ¸Õë
+	//å‹å…ƒå‡½æ•°ä¸èƒ½ç”¨constä¿®é¥°ï¼Œå› ä¸ºä¸æ˜¯æˆå‘˜å‡½æ•°
+	friend Coordinate& operator-(Coordinate& coor);	//å‹å…ƒå‡½æ•°-è¿ç®—ç¬¦é‡è½½ï¼Œæ²¡æœ‰thisæŒ‡é’ˆ
 	friend Coordinate& operator++(Coordinate& coor);
 	friend Coordinate operator+(const Coordinate& coor1, const Coordinate& coor2);
-	friend ostream& operator<<(ostream& out, const Coordinate& coor);	//Êä³öÔËËã·û<<£¬µÚÒ»¸ö²ÎÊı±ØĞëÊÇostreamÀàĞÍ£¬Òò´Ë²»ÄÜÍ¨¹ı³ÉÔ±º¯ÊıÊµÏÖÖØÔØ
+	friend ostream& operator<<(ostream& out, const Coordinate& coor);	//è¾“å‡ºè¿ç®—ç¬¦<<ï¼Œç¬¬ä¸€ä¸ªå‚æ•°å¿…é¡»æ˜¯ostreamç±»å‹ï¼Œå› æ­¤ä¸èƒ½é€šè¿‡æˆå‘˜å‡½æ•°å®ç°é‡è½½
 public:
 	Coordinate(int x = 0, int y = 0);
 	~Coordinate();
 	int getX();
 	int getY();
-	//Coordinate& operator-();	//·µ»ØÒıÓÃÀàĞÍ,Èç¹û·µ»ØCoordinate¶ÔÏóÀàĞÍ£¬Ôò-(-coor)²Ù×÷ºÍ-coor½á¹ûÒ»Ñù
-	//Coordinate& operator++();	//Ç°ÖÃ×ÔÔö++
-	Coordinate operator++(int);	//ÓÑÔªº¯ÊıÎŞ·¨ÊµÏÖºóÖÃ×ÔÔöÖØÔØ£¬ºóÖÃ×ÔÔö±ØĞëÓÃµ½thisÖ¸Õë
+	//Coordinate& operator-();	//è¿”å›å¼•ç”¨ç±»å‹,å¦‚æœè¿”å›Coordinateå¯¹è±¡ç±»å‹ï¼Œåˆ™-(-coor)æ“ä½œå’Œ-coorç»“æœä¸€æ ·
+	//Coordinate& operator++();	//å‰ç½®è‡ªå¢++
+	Coordinate operator++(int);	//å‹å…ƒå‡½æ•°æ— æ³•å®ç°åç½®è‡ªå¢é‡è½½ï¼Œåç½®è‡ªå¢å¿…é¡»ç”¨åˆ°thisæŒ‡é’ˆ
 
-	//Coordinate operator+(const Coordinate& coor);	//ĞèÒª·µ»Ø¾Ö²¿ÁÙÊ±±äÁ¿£¬²»ÓÃÒıÓÃ·µ»Ø
-	int& operator[](int index);	//Ë÷ÒıÔËËã·û[]±ØĞëÊÇ³ÉÔ±º¯ÊıÖØÔØ£¬ÓÑÔª
+	//Coordinate operator+(const Coordinate& coor);	//éœ€è¦è¿”å›å±€éƒ¨ä¸´æ—¶å˜é‡ï¼Œä¸ç”¨å¼•ç”¨è¿”å›
+	int& operator[](int index);	//ç´¢å¼•è¿ç®—ç¬¦[]å¿…é¡»æ˜¯æˆå‘˜å‡½æ•°é‡è½½ï¼Œå‹å…ƒ
 private:
 	int m_iX;
 	int m_iY;

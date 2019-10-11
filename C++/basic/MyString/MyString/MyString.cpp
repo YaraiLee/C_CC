@@ -13,7 +13,7 @@ MyString::MyString(const char* ptrData)
 		int len = strlen(ptrData);
 		m_data = new char[len + 1];
 		strcpy(m_data, ptrData);
-		m_data[len - 1] = '\0';
+		m_data[len] = '\0';
 	}
 }
 
@@ -29,7 +29,7 @@ MyString::MyString(const MyString& other) {
 	int len = strlen(other.m_data);
 	m_data = new char[len + 1];
 	strcpy(m_data, other.m_data);
-	m_data[len - 1] = '\0';
+	m_data[len] = '\0';
 }
 
 MyString& MyString::operator=(const MyString& other) {
@@ -41,7 +41,7 @@ MyString& MyString::operator=(const MyString& other) {
 	int len = strlen(other.m_data);
 	m_data = new char[len + 1];
 	strcpy(m_data, other.m_data);
-	m_data[len - 1] = '\0';
+	m_data[len] = '\0';
 	return *this;
 }
 
