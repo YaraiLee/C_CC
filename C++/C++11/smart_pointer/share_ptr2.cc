@@ -25,7 +25,7 @@ int main(){
     cout << pwin.use_count() << endl;//输出2
 
     for (int i = 0; i < 5; ++i) {
-        cout << *country[i]  << " -- " << country[i].use_count() << endl;//运行到[2]时崩溃，因为country[2].use_count()为2
+        cout << *country[i]  << " -- " << country[i].use_count() << endl;//country[2].use_count()为2
     }
     cout << "The best is " << *pwin << endl;
 
