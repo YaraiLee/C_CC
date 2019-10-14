@@ -1,9 +1,9 @@
 #pragma once
 
 /**
-* ¶¨ÒåÒ»¸ö¾ØĞÎÀàÄ£°åRect
-* ³ÉÔ±º¯Êı£ºcalcArea()¡¢calePerimeter()
-* Êı¾İ³ÉÔ±£ºm_length¡¢m_height
+* å®šä¹‰ä¸€ä¸ªçŸ©å½¢ç±»æ¨¡æ¿Rect
+* æˆå‘˜å‡½æ•°ï¼šcalcArea()ã€calePerimeter()
+* æ•°æ®æˆå‘˜ï¼šm_lengthã€m_height
 */
 template <typename T>
 class Rect
@@ -18,7 +18,7 @@ public:
 };
 
 /**
-* ÀàÊôĞÔ¸³Öµ
+* ç±»å±æ€§èµ‹å€¼
 */
 template <typename T>
 Rect<T>::Rect(T length, T height)
@@ -28,7 +28,7 @@ Rect<T>::Rect(T length, T height)
 }
 
 /**
-* Ãæ»ı·½·¨ÊµÏÖ
+* é¢ç§¯æ–¹æ³•å®ç°
 */
 template <typename T>
 T Rect<T>::calcArea()
@@ -37,7 +37,7 @@ T Rect<T>::calcArea()
 }
 
 /**
-* ÖÜ³¤·½·¨ÊµÏÖ
+* å‘¨é•¿æ–¹æ³•å®ç°
 */
 template <typename T>
 T Rect<T>::calePerimeter()
