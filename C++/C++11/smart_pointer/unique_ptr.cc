@@ -20,7 +20,7 @@ void fun(){
     if (pa == nullptr)
         
 
-    cout << "*pb " << *pb << endl;//pb变成了“CHA”
+    cout << "*pb " << *pb << endl;//pb变成了“CHN”
 
     string* ps = pb.release();//清空当前智能指针所指的资源对象,并返回指针
     cout << "*ps " << *ps << endl;//ps变成了“CHN”
