@@ -3,7 +3,7 @@
 #include <iostream>
 
 //插入排序-->稳定
-void insert_sort(int arr[], int size) {
+void insert_sort1(int arr[], int size) {
     int i, j, v;
     for (i = 1; i < size; i++) {
         for (v = arr[i], j = i - 1; j >= 0 && v < arr[j]; j--) {
@@ -13,7 +13,7 @@ void insert_sort(int arr[], int size) {
     }
 }
 
-void insert_sort_1(int arr[], int len)
+void insert_sort(int arr[], int len)
 {
 	for(int i = 1; i < len; i++)
 	{
@@ -27,7 +27,7 @@ void insert_sort_1(int arr[], int len)
 }
 
 //选择排序-->不稳定 
-void select_sort(int arr[], int size)
+void select_sort1(int arr[], int size)
 {
 	for (int i = 0; i < size-1; i++)
 	{
@@ -44,7 +44,7 @@ void select_sort(int arr[], int size)
 	}
 } 
 	//冒泡排序-->稳定 
-void bubble_sort(int arr[], int len)
+void bubble_sort1(int arr[], int len)
 {
 	for (int i = 0; i < len-1; i++)
 	{
@@ -60,7 +60,7 @@ void bubble_sort(int arr[], int len)
 	}
 } 
 
-void quick_sort(int a[], int low, int high)
+void quick_sort1(int a[], int low, int high)
 {
     if(low >= high)
     {
@@ -87,8 +87,8 @@ void quick_sort(int a[], int low, int high)
         if (first < last) a[last--] = a[first];    /*将比第一个大的移到高端*/
     }
     a[first] = key;/*枢轴记录到位*/
-    quick_sort(a, low, first-1);
-    quick_sort(a, first+1, high);
+    quick_sort1(a, low, first-1);
+    quick_sort1(a, first+1, high);
 }
 
 void Merge(int sourceArr[],int tempArr[], int startIndex, int midIndex, int endIndex)
@@ -122,31 +122,6 @@ void MergeSort(int sourceArr[], int tempArr[], int startIndex, int endIndex)
     }
 }
 
-int main(int argc, char *argv[])
-{
-	int array[] = {5,6,0,1,4,6,9,10};
-#if 1	
-	printf("排序前:\n", sizeof(array)); 
-	for (int i = 0; i < sizeof(array)/sizeof(array[0]); i++)
-	{	
-		printf("[%d]=%d ", i, array[i]);	
-	}
-	printf("\n");
-
-//	insert_sort_1(array, sizeof(array)/sizeof(array[0]));
-
-//	select_sort(array, sizeof(array)/sizeof(array[0]));
-
-//	bubble_sort(array, sizeof(array)/sizeof(array[0])); 
-	quick_sort(array, 0, sizeof(array)/sizeof(array[0])-1);
-	printf("排序后:\n"); 
-	for (int i = 0; i < sizeof(array)/sizeof(array[0]); i++)
-	{
-		printf("[%d]=%d ", i, array[i]);
-	}	
-	printf("\n");
-	system("pause"); 
-#endif	
 void select_sort(int arr[], int size) {
     for (int i = 0; i < size - 1; i++) {
         int min, j;
@@ -261,6 +236,18 @@ void quick_sort_stack(int arr[], int left, int right) {
     }
 }
 
+void sort_x(int a[], int n) {
+    int i, j;
+    for (i=1; i<=n-1; i++) {
+        for (j=0; j < n-i; j++) {
+            if (a[j] > a[j+1]) {
+                int temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
+            }
+        }
+    }
+}
 int main(int argc, char *argv[]) {
     int array[] = {4, 1, 7, 6, 9, 2, 8, 0, 3, 5};
 #if 1
@@ -269,13 +256,13 @@ int main(int argc, char *argv[]) {
         printf("[%d]=%d ", i, array[i]);
     }
     printf("\n");
-
-//	insert_sort(array, sizeof(array)/sizeof(array[0]));
+//    sort_x(array, sizeof(array) / sizeof(array[0]));
+	insert_sort(array, sizeof(array)/sizeof(array[0]));
 
 //	select_sort(array, sizeof(array)/sizeof(array[0]));
 
 //	bubble_sort(array, sizeof(array)/sizeof(array[0]));
-    quick_sort_stack(array, 0, sizeof(array) / sizeof(array[0]) - 1);
+    // quick_sort_stack(array, 0, sizeof(array) / sizeof(array[0]) - 1);
     printf("排序后:\n");
     for (int i = 0; i < sizeof(array) / sizeof(array[0]); i++) {
         printf("[%d]=%d ", i, array[i]);
